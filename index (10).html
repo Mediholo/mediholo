@@ -74,12 +74,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;height:64px;display:flex;ali
 .nav-contact:hover{background:var(--blue-light)}
 
 /* ── HERO ── */
-.hero{min-height:100vh;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:0 5vw 88px;background:var(--bg)}
+.hero{min-height:100vh;position:relative;overflow:hidden;display:flex;flex-direction:column;padding:88px 5vw 80px;background:var(--bg);box-sizing:border-box;gap:0}
 .hero-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(26,107,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(26,107,255,0.04) 1px,transparent 1px);background-size:64px 64px}
 .hero-glow{position:absolute;top:10%;left:50%;transform:translateX(-50%);width:900px;height:500px;background:radial-gradient(ellipse at center,rgba(26,107,255,0.14) 0%,transparent 65%);pointer-events:none}
 .hero-glow2{position:absolute;top:30%;left:20%;width:400px;height:400px;background:radial-gradient(ellipse at center,rgba(0,200,224,0.06) 0%,transparent 70%);pointer-events:none}
 /* animated rings */
-.hero-rings-wrap{position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);pointer-events:none}
+.hero-rings-wrap{position:absolute;top:50%;left:50%;transform:translate(-50%,-55%);pointer-events:none;z-index:0}
 .hring{position:absolute;border-radius:50%;border:1px solid;top:50%;left:50%;transform:translate(-50%,-50%)}
 .hring1{width:160px;height:160px;border-color:rgba(26,107,255,0.3);animation:rot1 25s linear infinite}
 .hring2{width:320px;height:320px;border-color:rgba(26,107,255,0.15);animation:rot1 40s linear infinite reverse}
@@ -90,16 +90,16 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;height:64px;display:flex;ali
 .hring-dot2{position:absolute;width:5px;height:5px;border-radius:50%;background:var(--cyan);bottom:-2.5px;right:0;box-shadow:0 0 10px var(--cyan)}
 .hring-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:12px;height:12px;border-radius:50%;background:var(--blue);box-shadow:0 0 20px rgba(26,107,255,0.8),0 0 40px rgba(26,107,255,0.3)}
 @keyframes rot1{from{transform:translate(-50%,-50%) rotate(0deg)}to{transform:translate(-50%,-50%) rotate(360deg)}}
-.hero-top{position:absolute;top:88px;left:5vw;right:5vw;display:flex;justify-content:space-between;align-items:center}
-.hero-badge{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim);display:flex;align-items:center;gap:0.6rem}
+.hero-top{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;margin-bottom:auto}
+.hero-badge{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue-light);font-weight:500;display:flex;align-items:center;gap:0.6rem}
 .hero-badge::before{content:'';width:32px;height:1px;background:var(--blue)}
 .hero-scroll-txt{font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim);display:flex;align-items:center;gap:0.5rem}
 .hero-scroll-txt::after{content:'';width:32px;height:1px;background:var(--text-dim)}
-.hero-content{position:relative;z-index:1}
-h1.hero-h{font-family:'Pretendard Variable',Pretendard,sans-serif;font-size:clamp(3.2rem,7.5vw,8rem);line-height:0.95;letter-spacing:-0.04em;color:var(--text);font-weight:800;margin-bottom:2.5rem}
+.hero-content{position:relative;z-index:1;margin-top:auto}
+h1.hero-h{font-family:'Pretendard Variable',Pretendard,sans-serif;font-size:clamp(2rem,5vw,6rem);line-height:1.05;letter-spacing:-0.04em;color:var(--text);font-weight:800;margin-bottom:1.75rem}
 h1.hero-h em{font-style:normal;font-weight:300;color:var(--blue-light);opacity:0.75}
-.hero-foot{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:2rem}
-.hero-desc{font-size:1rem;color:var(--text-muted);max-width:400px;line-height:1.85}
+.hero-foot{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;margin-top:1rem}
+.hero-desc{font-size:clamp(0.85rem,1.2vw,1rem);color:var(--text-muted);max-width:min(400px,45vw);line-height:1.85}
 .hero-pills{display:flex;flex-direction:column;gap:0.6rem;align-items:flex-end}
 .hpill{font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;font-weight:500;padding:0.45rem 1rem;border:1px solid;cursor:default;display:flex;align-items:center;gap:0.5rem}
 .hpill-dot{width:5px;height:5px;border-radius:50%}
@@ -278,6 +278,11 @@ footer p{font-size:0.75rem;color:var(--text-dim)}
 
 /* ── RESPONSIVE ── */
 @media(max-width:1024px){
+  .hero{padding:80px 5vw 60px}
+  h1.hero-h{font-size:clamp(1.9rem,4.5vw,4rem);line-height:1.1}
+  .hero-desc{max-width:100%;font-size:0.9rem}
+  .hero-foot{flex-direction:column;align-items:flex-start;gap:1rem}
+  .hero-pills{align-items:flex-start;flex-direction:row;flex-wrap:wrap}
   .g-cols-4{grid-template-columns:repeat(2,1fr)}
   .four-col{grid-template-columns:repeat(2,1fr)}
   .tech-hero-row{grid-template-columns:1fr;gap:3rem}
@@ -291,7 +296,11 @@ footer p{font-size:0.75rem;color:var(--text-dim)}
 }
 @media(max-width:640px){
   .nav-main{display:none}
-  h1.hero-h{font-size:3rem}
+  .hero{padding:76px 5vw 56px}
+  h1.hero-h{font-size:clamp(1.7rem,7vw,2.6rem);line-height:1.15;margin-bottom:1rem}
+  .hero-desc{font-size:0.85rem;max-width:100%}
+  .hero-foot{flex-direction:column;align-items:flex-start;gap:0.75rem}
+  .hero-pills{flex-direction:row;flex-wrap:wrap;align-items:flex-start;gap:0.4rem}
   .g-cols-4,.g-cols-3,.g-cols-2{grid-template-columns:1fr}
   .four-col,.three-col,.two-col{grid-template-columns:1fr}
   .tech-diagram{height:auto}
@@ -322,7 +331,7 @@ footer p{font-size:0.75rem;color:var(--text-dim)}
         <a href="#prod-beauty"><span class="dropdown-dot" style="background:var(--beauty)"></span>HoloStim Beauty</a>
         <a href="#prod-brain"><span class="dropdown-dot" style="background:var(--blue-light)"></span>HoloStim Brain</a>
         <a href="#prod-cell"><span class="dropdown-dot" style="background:var(--cyan)"></span>HoloStim Cell</a>
-        <a href="#prod-acc"><span class="dropdown-dot" style="background:var(--acc)"></span>Accessory</a>
+        <a href="#prod-acc"><span class="dropdown-dot" style="background:var(--acc)"></span>HoloStim Accessory</a>
       </div>
     </li>
     <li class="nav-item"><a href="#applications">Applications</a></li>
@@ -361,7 +370,7 @@ footer p{font-size:0.75rem;color:var(--text-dim)}
         <span class="hpill p1"><span class="hpill-dot" style="background:var(--beauty)"></span>HoloStim Beauty</span>
         <span class="hpill p2"><span class="hpill-dot" style="background:var(--blue-light)"></span>HoloStim Brain</span>
         <span class="hpill p3"><span class="hpill-dot" style="background:var(--cyan)"></span>HoloStim Cell</span>
-        <span class="hpill p4"><span class="hpill-dot" style="background:var(--acc)"></span>Accessory</span>
+        <span class="hpill p4"><span class="hpill-dot" style="background:var(--acc)"></span>HoloStim Accessory</span>
         
       </div>
     </div>
@@ -632,7 +641,7 @@ footer p{font-size:0.75rem;color:var(--text-dim)}
         <button class="ptab active t-beauty" data-pane="prod-beauty">01 — HoloStim <span style="opacity:0.55;font-weight:300;font-size:0.85em">Beauty</span></button>
         <button class="ptab t-brain"   data-pane="prod-brain">02 — HoloStim <span style="opacity:0.55;font-weight:300;font-size:0.85em">Brain</span></button>
         <button class="ptab t-cell"    data-pane="prod-cell">03 — HoloStim <span style="opacity:0.55;font-weight:300;font-size:0.85em">Cell</span></button>
-        <button class="ptab t-acc"     data-pane="prod-acc">04 — Accessory</button>
+        <button class="ptab t-acc"     data-pane="prod-acc">04 — HoloStim Accessory</button>
       </div>
 
       <!-- BEAUTY -->
@@ -743,7 +752,7 @@ footer p{font-size:0.75rem;color:var(--text-dim)}
         </div>
         <div class="pane-body">
           <div class="pane-n">04</div>
-          <h3 class="pane-title" style="color:var(--acc)">Accessory</h3>
+          <h3 class="pane-title" style="color:var(--acc)">HoloStim Accessory</h3>
           <p class="pane-sub">맞춤형 Hologram Lens · Transducer — 정밀 초음파 자극의 핵심 소모품</p>
           <p class="pane-desc">HoloStim의 핵심 경쟁력은 맞춤형 Hologram Lens와 Transducer 제작 기술입니다. Printer-Toner 방식으로 본체 구매 후 치료 목적(뷰티·뇌신경·세포)에 맞는 렌즈를 교체해 정밀 초음파 조직 및 세포 자극 패턴을 자유롭게 구현합니다.</p>
           <ul class="feat-list">
@@ -821,7 +830,7 @@ footer p{font-size:0.75rem;color:var(--text-dim)}
         <ul class="about-list rv d1">
           <li><span>설립</span><span>DGIST 기반 딥테크 헬스케어 스타트업</span></li>
           <li><span>핵심 기술</span><span>세계 최초 AI 기반 실시간 초음파 홀로그램 생성</span></li>
-          <li><span>제품군</span><span>HoloStim Beauty · Brain · Cell · Accessory</span></li>
+          <li><span>제품군</span><span>HoloStim Beauty · Brain · Cell · HoloStim Accessory</span></li>
           <li><span>목표 시장</span><span>뷰티 의료기기 · 신경병증성 통증 · 세포 배양</span></li>
           <li><span>인허가 목표</span><span>국내 식약처 2029 · 미국 FDA 2030</span></li>
           <li><span>글로벌 런칭</span><span>미국 · 유럽 · 중국 2033년~</span></li>
@@ -869,7 +878,7 @@ footer p{font-size:0.75rem;color:var(--text-dim)}
 <div class="contact-s" id="contact">
   <div class="contact-inner">
     <h2 class="contact-h">Together we can<br><em>shape the future</em></h2>
-    <p class="contact-sub">HoloStim Beauty · Brain · Cell · Accessory — 초음파 홀로그램 원천 기술 위에 세운 네 가지 혁신. MediHolo와 함께 미래 헬스케어를 만들어가세요.</p>
+    <p class="contact-sub">HoloStim Beauty · Brain · Cell · HoloStim Accessory — 초음파 홀로그램 원천 기술 위에 세운 네 가지 혁신. MediHolo와 함께 미래 헬스케어를 만들어가세요.</p>
     <div class="btn-row">
       <a href="mailto:contact@mediholo.com" class="btn-blue">Get in touch</a>
       <a href="#products" class="btn-ghost">View Products</a>
