@@ -251,10 +251,43 @@ h2.disp em{font-style:normal;font-weight:300;color:var(--blue-light)}
 .partner-logo-card.bg-blue{background:#eef3fb;}
 
 /* ── CONTACT ── */
-.contact-s{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:100px 0;text-align:center}
-.contact-inner{max-width:680px;margin:0 auto;padding:0 5vw}
-.contact-h{font-family:'Pretendard Variable',Pretendard,sans-serif;font-size:clamp(2.2rem,4.5vw,4rem);font-weight:800;line-height:1.05;letter-spacing:-0.03em;margin-bottom:1.5rem}
+.contact-s{background:var(--bg);border-top:1px solid var(--border);padding:0}
+.contact-wrap{max-width:1200px;margin:0 auto;padding:0 5vw;display:grid;grid-template-columns:1fr 1fr;gap:0;min-height:520px}
+.contact-left{padding:80px 60px 80px 0;border-right:1px solid var(--border)}
+.contact-right{padding:80px 0 80px 60px;background:var(--bg)}
+.contact-h{font-family:'Pretendard Variable',Pretendard,sans-serif;font-size:clamp(1.8rem,3.5vw,3rem);font-weight:800;line-height:1.1;letter-spacing:-0.03em;margin-bottom:1rem;color:var(--text)}
 .contact-h em{font-style:normal;font-weight:300;color:var(--blue-light)}
+.contact-sub-txt{font-size:0.9rem;color:var(--text-muted);line-height:1.8;margin-bottom:2rem}
+.contact-info{display:flex;flex-direction:column;gap:1.25rem;margin-top:2.5rem}
+.contact-info-item{display:flex;gap:1rem;align-items:flex-start}
+.contact-info-icon{width:36px;height:36px;border:1px solid var(--blue-border);border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.9rem;color:var(--blue-light)}
+.contact-info-body{}
+.contact-info-label{font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);margin-bottom:0.2rem}
+.contact-info-val{font-size:0.875rem;color:var(--text-muted);line-height:1.5}
+/* form */
+.cf-title{font-family:'Pretendard Variable',Pretendard,sans-serif;font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:1.75rem;padding-bottom:1rem;border-bottom:1px solid var(--border)}
+.cf-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+.cf-row.full{grid-template-columns:1fr}
+.cf-group{display:flex;flex-direction:column;gap:0.4rem}
+.cf-label{font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-dim);font-weight:500}
+.cf-label span{color:var(--blue-light);margin-left:2px}
+.cf-input,.cf-select,.cf-textarea{background:var(--surface);border:1px solid var(--border);color:var(--text);font-family:'Pretendard Variable',Pretendard,sans-serif;font-size:0.875rem;padding:0.7rem 0.9rem;border-radius:6px;outline:none;transition:border-color .2s;width:100%;box-sizing:border-box}
+.cf-input:focus,.cf-select:focus,.cf-textarea:focus{border-color:var(--blue-light)}
+.cf-input::placeholder,.cf-textarea::placeholder{color:var(--text-dim)}
+.cf-select{cursor:pointer;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%234a5878' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 0.9rem center}
+.cf-select option{background:var(--surface);color:var(--text)}
+.cf-textarea{resize:vertical;min-height:110px;line-height:1.6}
+.cf-submit{width:100%;background:var(--blue);color:#fff;border:none;padding:0.9rem 1.5rem;font-family:'Pretendard Variable',Pretendard,sans-serif;font-size:0.875rem;font-weight:600;letter-spacing:0.04em;border-radius:6px;cursor:pointer;transition:background .2s,transform .15s;margin-top:0.5rem}
+.cf-submit:hover{background:var(--blue-light);transform:translateY(-1px)}
+.cf-submit:active{transform:translateY(0)}
+.cf-success{display:none;text-align:center;padding:2rem;background:rgba(26,107,255,0.08);border:1px solid var(--blue-border);border-radius:10px;color:var(--blue-light);font-size:0.95rem;line-height:1.75}
+.cf-success svg{display:block;margin:0 auto 1rem}
+@media(max-width:900px){
+  .contact-wrap{grid-template-columns:1fr}
+  .contact-left{padding:60px 0 40px;border-right:none;border-bottom:1px solid var(--border)}
+  .contact-right{padding:40px 0 60px}
+  .cf-row{grid-template-columns:1fr}
+}
 .contact-sub{font-size:0.95rem;color:var(--text-muted);max-width:460px;margin:0 auto 2.5rem;line-height:1.85}
 .btn-row{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
 .btn-blue{font-size:0.82rem;font-weight:500;letter-spacing:0.05em;color:#fff;background:var(--blue);padding:0.75rem 1.75rem;text-decoration:none;border:1px solid var(--blue);transition:background .2s}
@@ -876,13 +909,109 @@ footer p{font-size:0.75rem;color:var(--text-dim)}
 
 <!-- ══ CONTACT ══ -->
 <div class="contact-s" id="contact">
-  <div class="contact-inner">
-    <h2 class="contact-h">Together we can<br><em>shape the future</em></h2>
-    <p class="contact-sub">HoloStim Beauty · Brain · Cell · HoloStim Accessory — 초음파 홀로그램 원천 기술 위에 세운 네 가지 혁신. MediHolo와 함께 미래 헬스케어를 만들어가세요.</p>
-    <div class="btn-row">
-      <a href="mailto:contact@mediholo.com" class="btn-blue">Get in touch</a>
-      <a href="#products" class="btn-ghost">View Products</a>
+  <div class="contact-wrap">
+
+    <!-- 왼쪽: 소개 + 연락처 정보 -->
+    <div class="contact-left">
+      <span class="eyebrow" style="margin-bottom:1rem">Contact Us</span>
+      <h2 class="contact-h">Together we can<br><em>shape the future</em></h2>
+      <p class="contact-sub-txt">
+        MediHolo의 제품·기술·투자에 관심이 있으시면 아래 양식을 작성해 주세요.<br>
+        담당자가 빠르게 연락드리겠습니다.
+      </p>
+      <div class="contact-info">
+        <div class="contact-info-item">
+          <div class="contact-info-icon">✉</div>
+          <div class="contact-info-body">
+            <div class="contact-info-label">Email</div>
+            <div class="contact-info-val">sales@mediholo.com</div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon">📍</div>
+          <div class="contact-info-body">
+            <div class="contact-info-label">Address</div>
+            <div class="contact-info-val">대구광역시 테크노중앙대로 333<br>산학협력관 507호 스타트업오피스</div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon">🔬</div>
+          <div class="contact-info-body">
+            <div class="contact-info-label">Products</div>
+            <div class="contact-info-val">HoloStim Beauty · Brain · Cell · Accessory</div>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <!-- 오른쪽: 문의 폼 -->
+    <div class="contact-right">
+      <div class="cf-title">문의하기 — Send a Message</div>
+
+      <div id="cf-success" class="cf-success">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="19" stroke="#1a6bff" stroke-width="1.5"/><path d="M12 20l6 6 10-12" stroke="#1a6bff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        메시지가 전송되었습니다.<br>
+        <span style="font-size:0.82rem;color:var(--text-muted)">빠른 시간 내에 답변 드리겠습니다.</span>
+      </div>
+
+      <form id="contact-form">
+        <div class="cf-row">
+          <div class="cf-group">
+            <label class="cf-label">이름 <span>*</span></label>
+            <input class="cf-input" type="text" name="name" placeholder="홍길동" required>
+          </div>
+          <div class="cf-group">
+            <label class="cf-label">소속 기관 / 회사</label>
+            <input class="cf-input" type="text" name="company" placeholder="회사명 또는 기관명">
+          </div>
+        </div>
+        <div class="cf-row">
+          <div class="cf-group">
+            <label class="cf-label">이메일 <span>*</span></label>
+            <input class="cf-input" type="email" name="email" placeholder="example@email.com" required>
+          </div>
+          <div class="cf-group">
+            <label class="cf-label">연락처</label>
+            <input class="cf-input" type="tel" name="phone" placeholder="010-0000-0000">
+          </div>
+        </div>
+        <div class="cf-row full">
+          <div class="cf-group">
+            <label class="cf-label">문의 유형 <span>*</span></label>
+            <select class="cf-select" name="inquiry_type" required>
+              <option value="" disabled selected>선택해 주세요</option>
+              <option value="product">제품 문의 (HoloStim Beauty · Brain · Cell)</option>
+              <option value="accessory">액세서리 / 홀로그램 렌즈 문의</option>
+              <option value="investment">투자 / 파트너십 문의</option>
+              <option value="research">연구 협력 문의</option>
+              <option value="media">언론 / 미디어 문의</option>
+              <option value="other">기타</option>
+            </select>
+          </div>
+        </div>
+        <div class="cf-row full">
+          <div class="cf-group">
+            <label class="cf-label">관심 제품</label>
+            <select class="cf-select" name="product">
+              <option value="" disabled selected>해당 제품을 선택해 주세요 (선택)</option>
+              <option value="beauty">HoloStim Beauty</option>
+              <option value="brain">HoloStim Brain</option>
+              <option value="cell">HoloStim Cell</option>
+              <option value="accessory">HoloStim Accessory</option>
+              <option value="all">전체 / 미정</option>
+            </select>
+          </div>
+        </div>
+        <div class="cf-row full">
+          <div class="cf-group">
+            <label class="cf-label">메시지 <span>*</span></label>
+            <textarea class="cf-textarea" name="message" placeholder="문의 내용을 입력해 주세요." required></textarea>
+          </div>
+        </div>
+        <button type="submit" class="cf-submit">확인 — Send Message</button>
+      </form>
+    </div>
+
   </div>
 </div>
 
@@ -963,6 +1092,53 @@ const sio=new IntersectionObserver(entries=>{
   });
 },{threshold:0.4});
 sections.forEach(s=>sio.observe(s));
+</script>
+<script>
+document.getElementById('contact-form').addEventListener('submit', function(e){
+  e.preventDefault();
+  const f = e.target;
+  const name      = f.name.value.trim();
+  const company   = f.company.value.trim();
+  const email     = f.email.value.trim();
+  const phone     = f.phone.value.trim();
+  const inqType   = f.inquiry_type.options[f.inquiry_type.selectedIndex].text;
+  const product   = f.product.selectedIndex > 0 ? f.product.options[f.product.selectedIndex].text : '미선택';
+  const message   = f.message.value.trim();
+
+  const subject = encodeURIComponent(`[MediHolo 문의] ${inqType} — ${name}`);
+  const body = encodeURIComponent(
+    `■ 이름: ${name}
+` +
+    `■ 소속: ${company || '없음'}
+` +
+    `■ 이메일: ${email}
+` +
+    `■ 연락처: ${phone || '없음'}
+` +
+    `■ 문의 유형: ${inqType}
+` +
+    `■ 관심 제품: ${product}
+
+` +
+    `■ 메시지:
+${message}`
+  );
+
+  window.location.href = `mailto:sales@mediholo.com?subject=${subject}&body=${body}`;
+
+  // 성공 메시지 표시
+  setTimeout(()=>{
+    document.getElementById('contact-form').style.display = 'none';
+    const s = document.getElementById('cf-success');
+    s.style.display = 'block';
+    // 5초 후 폼 복원
+    setTimeout(()=>{
+      document.getElementById('contact-form').style.display = 'block';
+      document.getElementById('contact-form').reset();
+      s.style.display = 'none';
+    }, 5000);
+  }, 300);
+});
 </script>
 </body>
 </html>
