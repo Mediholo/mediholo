@@ -1494,45 +1494,61 @@ ${message}`
     document.getElementById('nadmin-pw').value = '';
   };
 
-  // ── 수정 모달 열기 ──
+  // ── 수정 모달 열기 + 이벤트 등록 (DOM 준비 후 실행) ──
   function openEditModal(id, title, content, category) {
-    document.getElementById('nedit-id').value    = id;
-    document.getElementById('nedit-ttl').value   = title;
-    document.getElementById('nedit-body').value  = content;
-    document.getElementById('nedit-cat').value   = category || 'general';
-    document.getElementById('nedit-overlay').style.display = 'flex';
+    const overlay   = document.getElementById('nedit-overlay');
+    const idInput   = document.getElementById('nedit-id');
+    const ttlInput  = document.getElementById('nedit-ttl');
+    const bodyInput = document.getElementById('nedit-body');
+    const catSelect = document.getElementById('nedit-cat');
+    const saveBtn   = document.getElementById('nedit-save-btn');
+    const cancelBtn = document.getElementById('nedit-cancel-btn');
+
+    if (!overlay) { alert('수정 모달을 찾을 수 없습니다. 페이지를 새로고침 해주세요.'); return; }
+
+    idInput.value   = id;
+    ttlInput.value  = title;
+    bodyInput.value = content;
+    catSelect.value = category || 'general';
+    overlay.style.display = 'flex';
+
+    // 저장 버튼 — 기존 리스너 제거 후 재등록 (중복 방지)
+    const newSaveBtn = saveBtn.cloneNode(true);
+    saveBtn.parentNode.replaceChild(newSaveBtn, saveBtn);
+    newSaveBtn.addEventListener('click', async () => {
+      const editId      = document.getElementById('nedit-id').value;
+      const editTitle   = document.getElementById('nedit-ttl').value.trim();
+      const editContent = document.getElementById('nedit-body').value.trim();
+      const editCat     = document.getElementById('nedit-cat').value;
+      if (!editTitle || !editContent) { alert('제목과 내용을 입력해 주세요.'); return; }
+      newSaveBtn.textContent = '저장 중...'; newSaveBtn.disabled = true;
+      try {
+        await updateDoc(doc(db, 'notices', editId), {
+          title: editTitle, content: editContent, category: editCat
+        });
+        overlay.style.display = 'none';
+        newSaveBtn.textContent = '저장하기'; newSaveBtn.disabled = false;
+        await loadNotices();
+        await loadAdminList();
+        alert('수정되었습니다.');
+      } catch(e) {
+        newSaveBtn.textContent = '저장하기'; newSaveBtn.disabled = false;
+        alert('오류: ' + e.message);
+      }
+    });
+
+    // 취소 버튼
+    const newCancelBtn = cancelBtn.cloneNode(true);
+    cancelBtn.parentNode.replaceChild(newCancelBtn, cancelBtn);
+    newCancelBtn.addEventListener('click', () => {
+      overlay.style.display = 'none';
+    });
+
+    // 배경 클릭 닫기
+    overlay.onclick = (e) => {
+      if (e.target === overlay) overlay.style.display = 'none';
+    };
   }
-
-  // 수정 저장
-  document.getElementById('nedit-save-btn').addEventListener('click', async () => {
-    const id      = document.getElementById('nedit-id').value;
-    const title   = document.getElementById('nedit-ttl').value.trim();
-    const content = document.getElementById('nedit-body').value.trim();
-    const cat     = document.getElementById('nedit-cat').value;
-    if (!title || !content) { alert('제목과 내용을 입력해 주세요.'); return; }
-    const btn = document.getElementById('nedit-save-btn');
-    btn.textContent = '저장 중...'; btn.disabled = true;
-    try {
-      await updateDoc(doc(db, 'notices', id), { title, content, category: cat });
-      document.getElementById('nedit-overlay').style.display = 'none';
-      btn.textContent = '저장하기'; btn.disabled = false;
-      await loadNotices();
-      await loadAdminList();
-      alert('수정되었습니다.');
-    } catch(e) {
-      btn.textContent = '저장하기'; btn.disabled = false;
-      alert('오류: ' + e.message);
-    }
-  });
-
-  // 수정 취소
-  document.getElementById('nedit-cancel-btn').addEventListener('click', () => {
-    document.getElementById('nedit-overlay').style.display = 'none';
-  });
-  document.getElementById('nedit-overlay').addEventListener('click', e => {
-    if (e.target === document.getElementById('nedit-overlay'))
-      document.getElementById('nedit-overlay').style.display = 'none';
-  });
   document.getElementById('nadmin-overlay').addEventListener('click', e => {
     if (e.target === document.getElementById('nadmin-overlay')) closeAdminModal();
   });
