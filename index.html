@@ -296,6 +296,13 @@ h2.disp em{font-style:normal;font-weight:300;color:var(--blue-light)}
 .nadmin-list-item{display:flex;justify-content:space-between;align-items:center;padding:0.6rem 0;border-bottom:1px solid var(--border);font-size:0.83rem;color:var(--text-muted)}
 .nadmin-del-btn{background:transparent;border:1px solid #ff4d6d44;color:#ff4d6d;font-size:0.72rem;padding:0.2rem 0.6rem;border-radius:4px;cursor:pointer}
 .nadmin-del-btn:hover{background:#ff4d6d;color:#fff}
+.nadmin-edit-btn{background:transparent;border:1px solid var(--blue-border);color:var(--blue-light);font-size:0.72rem;padding:0.2rem 0.6rem;border-radius:4px;cursor:pointer;margin-right:0.4rem}
+.nadmin-edit-btn:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
+.nadmin-action-btns{display:flex;gap:0.3rem}
+/* 수정 모달 */
+.nedit-overlay{display:none;position:fixed;inset:0;background:rgba(4,8,15,0.85);z-index:3000;align-items:center;justify-content:center;padding:1.5rem}
+.nedit-box{background:var(--surface);border:1px solid var(--blue-border);border-radius:14px;padding:2rem;width:100%;max-width:520px;max-height:90vh;overflow-y:auto}
+.nedit-title{font-family:'Pretendard Variable',Pretendard,sans-serif;font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:1.5rem;padding-bottom:0.75rem;border-bottom:1px solid var(--border)}
 @media(max-width:640px){
   .notice-item-header{grid-template-columns:auto 1fr auto;gap:0.5rem}
   .notice-date{display:none}
@@ -1296,10 +1303,37 @@ ${message}`
 });
 </script>
 
+<!-- 수정 모달 -->
+<div class="nedit-overlay" id="nedit-overlay">
+  <div class="nedit-box">
+    <div class="nedit-title">✏️ 공지사항 수정</div>
+    <input type="hidden" id="nedit-id">
+    <div class="nadmin-group">
+      <label class="nadmin-label">분류</label>
+      <select class="nadmin-select" id="nedit-cat">
+        <option value="important">📌 중요</option>
+        <option value="general">일반</option>
+      </select>
+    </div>
+    <div class="nadmin-group">
+      <label class="nadmin-label">제목 <span style="color:var(--blue-light)">*</span></label>
+      <input class="nadmin-input" type="text" id="nedit-ttl" placeholder="제목을 입력하세요">
+    </div>
+    <div class="nadmin-group">
+      <label class="nadmin-label">내용 <span style="color:var(--blue-light)">*</span></label>
+      <textarea class="nadmin-textarea" id="nedit-body" placeholder="내용을 입력하세요."></textarea>
+    </div>
+    <div class="nadmin-row" style="margin-top:1rem">
+      <button class="nadmin-submit" id="nedit-save-btn">저장하기</button>
+      <button class="nadmin-cancel" id="nedit-cancel-btn">취소</button>
+    </div>
+  </div>
+</div>
+
 <!-- Firebase SDK -->
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-  import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc, orderBy, query, serverTimestamp }
+  import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc, orderBy, query, serverTimestamp, updateDoc }
     from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
   // ── Firebase 설정 (본인 프로젝트 설정으로 교체) ──
@@ -1381,8 +1415,16 @@ ${message}`
       const d = docSnap.data();
       const row = document.createElement('div');
       row.className = 'nadmin-list-item';
-      row.innerHTML = `<span>${escHtml(d.title)}</span>
-        <button class="nadmin-del-btn" data-id="${docSnap.id}">삭제</button>`;
+      row.innerHTML = `
+        <span style="flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-right:0.5rem">${escHtml(d.title)}</span>
+        <div class="nadmin-action-btns">
+          <button class="nadmin-edit-btn" data-id="${docSnap.id}">수정</button>
+          <button class="nadmin-del-btn"  data-id="${docSnap.id}">삭제</button>
+        </div>`;
+      row.querySelector('.nadmin-edit-btn').addEventListener('click', (e) => {
+        const id = e.target.dataset.id;
+        openEditModal(id, d.title, d.content, d.category);
+      });
       row.querySelector('.nadmin-del-btn').addEventListener('click', async (e) => {
         if (!confirm('삭제하시겠습니까?')) return;
         const id = e.target.dataset.id;
@@ -1451,6 +1493,46 @@ ${message}`
     document.getElementById('nadmin-overlay').style.display = 'none';
     document.getElementById('nadmin-pw').value = '';
   };
+
+  // ── 수정 모달 열기 ──
+  function openEditModal(id, title, content, category) {
+    document.getElementById('nedit-id').value    = id;
+    document.getElementById('nedit-ttl').value   = title;
+    document.getElementById('nedit-body').value  = content;
+    document.getElementById('nedit-cat').value   = category || 'general';
+    document.getElementById('nedit-overlay').style.display = 'flex';
+  }
+
+  // 수정 저장
+  document.getElementById('nedit-save-btn').addEventListener('click', async () => {
+    const id      = document.getElementById('nedit-id').value;
+    const title   = document.getElementById('nedit-ttl').value.trim();
+    const content = document.getElementById('nedit-body').value.trim();
+    const cat     = document.getElementById('nedit-cat').value;
+    if (!title || !content) { alert('제목과 내용을 입력해 주세요.'); return; }
+    const btn = document.getElementById('nedit-save-btn');
+    btn.textContent = '저장 중...'; btn.disabled = true;
+    try {
+      await updateDoc(doc(db, 'notices', id), { title, content, category: cat });
+      document.getElementById('nedit-overlay').style.display = 'none';
+      btn.textContent = '저장하기'; btn.disabled = false;
+      await loadNotices();
+      await loadAdminList();
+      alert('수정되었습니다.');
+    } catch(e) {
+      btn.textContent = '저장하기'; btn.disabled = false;
+      alert('오류: ' + e.message);
+    }
+  });
+
+  // 수정 취소
+  document.getElementById('nedit-cancel-btn').addEventListener('click', () => {
+    document.getElementById('nedit-overlay').style.display = 'none';
+  });
+  document.getElementById('nedit-overlay').addEventListener('click', e => {
+    if (e.target === document.getElementById('nedit-overlay'))
+      document.getElementById('nedit-overlay').style.display = 'none';
+  });
   document.getElementById('nadmin-overlay').addEventListener('click', e => {
     if (e.target === document.getElementById('nadmin-overlay')) closeAdminModal();
   });
