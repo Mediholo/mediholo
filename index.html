@@ -1436,13 +1436,13 @@ ${message}`
       });
       document.getElementById('nadmin-ttl').value  = '';
       document.getElementById('nadmin-body').value = '';
+      btn.textContent = '게시하기'; btn.disabled = false;
       await loadNotices();
       await loadAdminList();
       alert('공지사항이 등록되었습니다.');
     } catch(e) {
-      alert('오류: ' + e.message);
-    } finally {
       btn.textContent = '게시하기'; btn.disabled = false;
+      alert('오류: ' + e.message);
     }
   });
 
