@@ -250,6 +250,57 @@ h2.disp em{font-style:normal;font-weight:300;color:var(--blue-light)}
 .partner-logo-card.bg-light{background:#ffffff;}
 .partner-logo-card.bg-blue{background:#eef3fb;}
 
+
+/* ── NOTICE BOARD ── */
+.notice-s{padding:100px 0;background:var(--bg);border-top:1px solid var(--border)}
+.notice-inner{max-width:900px;margin:0 auto;padding:0 5vw}
+.notice-toolbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem;flex-wrap:wrap;gap:1rem}
+.notice-admin-btn{font-family:'Pretendard Variable',Pretendard,sans-serif;font-size:0.75rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--blue-light);background:transparent;border:1px solid var(--blue-border);padding:0.45rem 1rem;border-radius:6px;cursor:pointer;transition:all .2s}
+.notice-admin-btn:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
+.notice-list{display:flex;flex-direction:column;gap:0}
+.notice-item{border-bottom:1px solid var(--border);cursor:pointer;transition:background .15s}
+.notice-item:first-child{border-top:1px solid var(--border)}
+.notice-item:hover{background:var(--surface)}
+.notice-item-header{display:grid;grid-template-columns:auto 1fr auto auto;align-items:center;gap:1rem;padding:1.1rem 1rem}
+.notice-badge{font-size:0.65rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:0.2rem 0.6rem;border-radius:4px;white-space:nowrap}
+.notice-badge.important{background:rgba(26,107,255,0.15);color:var(--blue-light)}
+.notice-badge.general{background:var(--surface);color:var(--text-dim)}
+.notice-title-txt{font-size:0.9rem;font-weight:500;color:var(--text);line-height:1.4}
+.notice-date{font-size:0.75rem;color:var(--text-dim);white-space:nowrap}
+.notice-chevron{color:var(--text-dim);transition:transform .2s;font-size:0.7rem}
+.notice-item.open .notice-chevron{transform:rotate(180deg)}
+.notice-body{display:none;padding:0 1rem 1.25rem 1rem;font-size:0.875rem;color:var(--text-muted);line-height:1.85;border-top:1px solid var(--border);background:var(--surface)}
+.notice-item.open .notice-body{display:block}
+.notice-empty{text-align:center;padding:4rem 0;color:var(--text-dim);font-size:0.875rem}
+.notice-loading{text-align:center;padding:3rem 0;color:var(--text-dim);font-size:0.85rem}
+/* 관리자 모달 */
+.nadmin-overlay{display:none;position:fixed;inset:0;background:rgba(4,8,15,0.8);z-index:2000;align-items:center;justify-content:center;padding:1.5rem}
+.nadmin-box{background:var(--surface);border:1px solid var(--blue-border);border-radius:14px;padding:2rem;width:100%;max-width:520px;max-height:90vh;overflow-y:auto}
+.nadmin-title{font-family:'Pretendard Variable',Pretendard,sans-serif;font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:1.5rem;padding-bottom:0.75rem;border-bottom:1px solid var(--border)}
+.nadmin-group{display:flex;flex-direction:column;gap:0.4rem;margin-bottom:1rem}
+.nadmin-label{font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-dim);font-weight:500}
+.nadmin-input,.nadmin-select,.nadmin-textarea{background:var(--bg);border:1px solid var(--border);color:var(--text);font-family:'Pretendard Variable',Pretendard,sans-serif;font-size:0.875rem;padding:0.65rem 0.85rem;border-radius:6px;outline:none;transition:border-color .2s;width:100%;box-sizing:border-box}
+.nadmin-input:focus,.nadmin-select:focus,.nadmin-textarea:focus{border-color:var(--blue-light)}
+.nadmin-select{cursor:pointer;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%234a5878' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 0.85rem center}
+.nadmin-textarea{resize:vertical;min-height:130px;line-height:1.6}
+.nadmin-row{display:flex;gap:0.75rem;margin-top:0.5rem}
+.nadmin-submit{flex:1;background:var(--blue);color:#fff;border:none;padding:0.75rem;font-family:'Pretendard Variable',Pretendard,sans-serif;font-size:0.85rem;font-weight:600;border-radius:6px;cursor:pointer;transition:background .2s}
+.nadmin-submit:hover{background:var(--blue-light)}
+.nadmin-cancel{flex:1;background:transparent;color:var(--text-muted);border:1px solid var(--border);padding:0.75rem;font-family:'Pretendard Variable',Pretendard,sans-serif;font-size:0.85rem;border-radius:6px;cursor:pointer;transition:all .2s}
+.nadmin-cancel:hover{border-color:var(--blue-border);color:var(--text)}
+.nadmin-pw-wrap{display:flex;gap:0.75rem;margin-bottom:1.25rem}
+.nadmin-pw-input{flex:1;background:var(--bg);border:1px solid var(--border);color:var(--text);font-family:'Pretendard Variable',Pretendard,sans-serif;font-size:0.875rem;padding:0.65rem 0.85rem;border-radius:6px;outline:none;transition:border-color .2s}
+.nadmin-pw-input:focus{border-color:var(--blue-light)}
+.nadmin-pw-btn{background:var(--blue);color:#fff;border:none;padding:0.65rem 1.25rem;font-family:'Pretendard Variable',Pretendard,sans-serif;font-size:0.85rem;font-weight:600;border-radius:6px;cursor:pointer;white-space:nowrap}
+.nadmin-err{font-size:0.78rem;color:#ff4d6d;margin-top:0.3rem;display:none}
+.nadmin-list-item{display:flex;justify-content:space-between;align-items:center;padding:0.6rem 0;border-bottom:1px solid var(--border);font-size:0.83rem;color:var(--text-muted)}
+.nadmin-del-btn{background:transparent;border:1px solid #ff4d6d44;color:#ff4d6d;font-size:0.72rem;padding:0.2rem 0.6rem;border-radius:4px;cursor:pointer}
+.nadmin-del-btn:hover{background:#ff4d6d;color:#fff}
+@media(max-width:640px){
+  .notice-item-header{grid-template-columns:auto 1fr auto;gap:0.5rem}
+  .notice-date{display:none}
+}
+
 /* ── CONTACT ── */
 .contact-s{background:var(--bg);border-top:1px solid var(--border);padding:0}
 .contact-wrap{max-width:1200px;margin:0 auto;padding:0 5vw;display:grid;grid-template-columns:1fr 1fr;gap:0;min-height:520px}
@@ -383,6 +434,7 @@ footer p{font-size:0.75rem;color:var(--text-dim)}
     </li>
     <li class="nav-item"><a href="#applications">Applications</a></li>
     <li class="nav-item"><a href="#about">About</a></li>
+    <li class="nav-item"><a href="#notice">Notice</a></li>
     <li class="nav-item"><a href="#contact">Contact</a></li>
   </ul>
   <a href="#contact" class="nav-contact">Get in touch</a>
@@ -918,6 +970,86 @@ footer p{font-size:0.75rem;color:var(--text-dim)}
 </section>
 
 <!-- ══ CONTACT ══ -->
+
+<!-- ── NOTICE BOARD ── -->
+<section class="notice-s" id="notice">
+  <div class="notice-inner">
+    <div class="notice-toolbar">
+      <div>
+        <div class="eyebrow" style="margin-bottom:0.5rem">Notice Board</div>
+        <h2 style="font-family:'Pretendard Variable',Pretendard,sans-serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;letter-spacing:-0.03em;color:var(--text);line-height:1.1">공지사항</h2>
+      </div>
+      <button class="notice-admin-btn" id="nadmin-open-btn">관리자 ⚙</button>
+    </div>
+
+    <!-- 게시글 목록 -->
+    <div class="notice-list" id="notice-list">
+      <div class="notice-loading" id="notice-loading">게시글을 불러오는 중...</div>
+    </div>
+    <div class="notice-empty" id="notice-empty" style="display:none">
+      등록된 공지사항이 없습니다.
+    </div>
+  </div>
+</section>
+
+<!-- 관리자 모달 -->
+<div class="nadmin-overlay" id="nadmin-overlay">
+  <div class="nadmin-box">
+
+    <!-- Step 1: 비밀번호 확인 -->
+    <div id="nadmin-auth">
+      <div class="nadmin-title">🔒 관리자 로그인</div>
+      <div class="nadmin-group">
+        <label class="nadmin-label">관리자 비밀번호</label>
+        <div class="nadmin-pw-wrap">
+          <input class="nadmin-pw-input" type="password" id="nadmin-pw" placeholder="비밀번호 입력">
+          <button class="nadmin-pw-btn" id="nadmin-pw-btn">확인</button>
+        </div>
+        <div class="nadmin-err" id="nadmin-pw-err">비밀번호가 올바르지 않습니다.</div>
+      </div>
+      <button class="nadmin-cancel" onclick="closeAdminModal()">취소</button>
+    </div>
+
+    <!-- Step 2: 관리자 패널 -->
+    <div id="nadmin-panel" style="display:none">
+      <div class="nadmin-title">⚙ 공지사항 관리</div>
+
+      <!-- 새 글 작성 -->
+      <div style="background:var(--bg);border-radius:8px;padding:1.25rem;margin-bottom:1.5rem;border:1px solid var(--border)">
+        <div style="font-size:0.8rem;font-weight:600;color:var(--blue-light);margin-bottom:1rem;letter-spacing:0.06em;text-transform:uppercase">새 공지 작성</div>
+        <div class="nadmin-group">
+          <label class="nadmin-label">분류</label>
+          <select class="nadmin-select" id="nadmin-cat">
+            <option value="important">📌 중요</option>
+            <option value="general">일반</option>
+          </select>
+        </div>
+        <div class="nadmin-group">
+          <label class="nadmin-label">제목 <span style="color:var(--blue-light)">*</span></label>
+          <input class="nadmin-input" type="text" id="nadmin-ttl" placeholder="공지 제목을 입력하세요">
+        </div>
+        <div class="nadmin-group">
+          <label class="nadmin-label">내용 <span style="color:var(--blue-light)">*</span></label>
+          <textarea class="nadmin-textarea" id="nadmin-body" placeholder="공지 내용을 입력하세요."></textarea>
+        </div>
+        <div class="nadmin-row">
+          <button class="nadmin-submit" id="nadmin-submit-btn">게시하기</button>
+          <button class="nadmin-cancel" onclick="closeAdminModal()">닫기</button>
+        </div>
+      </div>
+
+      <!-- 기존 글 목록 -->
+      <div>
+        <div style="font-size:0.8rem;font-weight:600;color:var(--text-dim);margin-bottom:0.75rem;letter-spacing:0.06em;text-transform:uppercase">게시된 공지 목록</div>
+        <div id="nadmin-list-wrap">
+          <div style="font-size:0.82rem;color:var(--text-dim);padding:0.5rem 0">불러오는 중...</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 <div class="contact-s" id="contact">
   <div class="contact-wrap">
 
@@ -1163,5 +1295,168 @@ ${message}`
   }, 300);
 });
 </script>
+
+<!-- Firebase SDK -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc, orderBy, query, serverTimestamp }
+    from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+  // ── Firebase 설정 (본인 프로젝트 설정으로 교체) ──
+  const firebaseConfig = {
+    apiKey:            "YOUR_API_KEY",
+    authDomain:        "YOUR_PROJECT.firebaseapp.com",
+    projectId:         "YOUR_PROJECT_ID",
+    storageBucket:     "YOUR_PROJECT.appspot.com",
+    messagingSenderId: "YOUR_SENDER_ID",
+    appId:             "YOUR_APP_ID"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db  = getFirestore(app);
+
+  // ── 관리자 비밀번호 (여기서 변경) ──
+  const ADMIN_PW = "mediholo2024!";
+
+  // ── 날짜 포맷 ──
+  function fmtDate(ts) {
+    if (!ts) return '';
+    const d = ts.toDate ? ts.toDate() : new Date(ts);
+    return d.toLocaleDateString('ko-KR', { year:'numeric', month:'2-digit', day:'2-digit' })
+             .replace(/\. /g,'.').replace('.','');
+  }
+
+  // ── 게시글 렌더링 ──
+  async function loadNotices() {
+    const listEl   = document.getElementById('notice-list');
+    const emptyEl  = document.getElementById('notice-empty');
+    const loadEl   = document.getElementById('notice-loading');
+    try {
+      const q    = query(collection(db, 'notices'), orderBy('createdAt', 'desc'));
+      const snap = await getDocs(q);
+      loadEl.style.display = 'none';
+      if (snap.empty) { emptyEl.style.display = 'block'; return; }
+      emptyEl.style.display = 'none';
+      listEl.innerHTML = '';
+      snap.forEach(docSnap => {
+        const d  = docSnap.data();
+        const id = docSnap.id;
+        const item = document.createElement('div');
+        item.className = 'notice-item';
+        item.dataset.id = id;
+        item.innerHTML = `
+          <div class="notice-item-header">
+            <span class="notice-badge ${d.category === 'important' ? 'important' : 'general'}">
+              ${d.category === 'important' ? '📌 중요' : '일반'}
+            </span>
+            <span class="notice-title-txt">${escHtml(d.title)}</span>
+            <span class="notice-date">${fmtDate(d.createdAt)}</span>
+            <span class="notice-chevron">▼</span>
+          </div>
+          <div class="notice-body">${escHtml(d.content).replace(/\n/g,'<br>')}</div>`;
+        item.querySelector('.notice-item-header').addEventListener('click', () => {
+          item.classList.toggle('open');
+        });
+        listEl.appendChild(item);
+      });
+    } catch(e) {
+      loadEl.textContent = 'Firebase 설정을 확인해 주세요. (' + e.message + ')';
+      console.error(e);
+    }
+  }
+
+  function escHtml(s) {
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  // ── 관리자 패널 게시글 목록 ──
+  async function loadAdminList() {
+    const wrap = document.getElementById('nadmin-list-wrap');
+    const q    = query(collection(db, 'notices'), orderBy('createdAt', 'desc'));
+    const snap = await getDocs(q);
+    if (snap.empty) { wrap.innerHTML = '<div style="font-size:0.82rem;color:var(--text-dim);padding:0.5rem 0">게시글이 없습니다.</div>'; return; }
+    wrap.innerHTML = '';
+    snap.forEach(docSnap => {
+      const d = docSnap.data();
+      const row = document.createElement('div');
+      row.className = 'nadmin-list-item';
+      row.innerHTML = `<span>${escHtml(d.title)}</span>
+        <button class="nadmin-del-btn" data-id="${docSnap.id}">삭제</button>`;
+      row.querySelector('.nadmin-del-btn').addEventListener('click', async (e) => {
+        if (!confirm('삭제하시겠습니까?')) return;
+        const id = e.target.dataset.id;
+        await deleteDoc(doc(db, 'notices', id));
+        await loadNotices();
+        await loadAdminList();
+      });
+      wrap.appendChild(row);
+    });
+  }
+
+  // ── 관리자 인증 ──
+  let authenticated = false;
+  document.getElementById('nadmin-open-btn').addEventListener('click', () => {
+    document.getElementById('nadmin-overlay').style.display = 'flex';
+    if (authenticated) {
+      document.getElementById('nadmin-auth').style.display  = 'none';
+      document.getElementById('nadmin-panel').style.display = 'block';
+      loadAdminList();
+    }
+  });
+
+  document.getElementById('nadmin-pw-btn').addEventListener('click', () => {
+    const pw  = document.getElementById('nadmin-pw').value;
+    const err = document.getElementById('nadmin-pw-err');
+    if (pw === ADMIN_PW) {
+      authenticated = true;
+      document.getElementById('nadmin-auth').style.display  = 'none';
+      document.getElementById('nadmin-panel').style.display = 'block';
+      loadAdminList();
+      err.style.display = 'none';
+    } else {
+      err.style.display = 'block';
+    }
+  });
+  document.getElementById('nadmin-pw').addEventListener('keydown', e => {
+    if (e.key === 'Enter') document.getElementById('nadmin-pw-btn').click();
+  });
+
+  // ── 게시글 등록 ──
+  document.getElementById('nadmin-submit-btn').addEventListener('click', async () => {
+    const title   = document.getElementById('nadmin-ttl').value.trim();
+    const content = document.getElementById('nadmin-body').value.trim();
+    const cat     = document.getElementById('nadmin-cat').value;
+    if (!title || !content) { alert('제목과 내용을 입력해 주세요.'); return; }
+    const btn = document.getElementById('nadmin-submit-btn');
+    btn.textContent = '게시 중...'; btn.disabled = true;
+    try {
+      await addDoc(collection(db, 'notices'), {
+        title, content, category: cat, createdAt: serverTimestamp()
+      });
+      document.getElementById('nadmin-ttl').value  = '';
+      document.getElementById('nadmin-body').value = '';
+      await loadNotices();
+      await loadAdminList();
+      alert('공지사항이 등록되었습니다.');
+    } catch(e) {
+      alert('오류: ' + e.message);
+    } finally {
+      btn.textContent = '게시하기'; btn.disabled = false;
+    }
+  });
+
+  // ── 모달 닫기 ──
+  window.closeAdminModal = function() {
+    document.getElementById('nadmin-overlay').style.display = 'none';
+    document.getElementById('nadmin-pw').value = '';
+  };
+  document.getElementById('nadmin-overlay').addEventListener('click', e => {
+    if (e.target === document.getElementById('nadmin-overlay')) closeAdminModal();
+  });
+
+  // 초기 로드
+  loadNotices();
+</script>
+
 </body>
 </html>
