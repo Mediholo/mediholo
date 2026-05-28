@@ -1494,61 +1494,49 @@ ${message}`
     document.getElementById('nadmin-pw').value = '';
   };
 
-  // ── 수정 모달 열기 + 이벤트 등록 (DOM 준비 후 실행) ──
+  // ── 수정 대상 ID 저장용 ──
+  let currentEditId = null;
+
+  // ── 수정 모달 열기 ──
   function openEditModal(id, title, content, category) {
-    const overlay   = document.getElementById('nedit-overlay');
-    const idInput   = document.getElementById('nedit-id');
-    const ttlInput  = document.getElementById('nedit-ttl');
-    const bodyInput = document.getElementById('nedit-body');
-    const catSelect = document.getElementById('nedit-cat');
-    const saveBtn   = document.getElementById('nedit-save-btn');
-    const cancelBtn = document.getElementById('nedit-cancel-btn');
+    currentEditId = id;
+    document.getElementById('nedit-ttl').value  = title;
+    document.getElementById('nedit-body').value = content;
+    document.getElementById('nedit-cat').value  = category || 'general';
+    document.getElementById('nedit-overlay').style.display = 'flex';
+  }
 
-    if (!overlay) { alert('수정 모달을 찾을 수 없습니다. 페이지를 새로고침 해주세요.'); return; }
-
-    idInput.value   = id;
-    ttlInput.value  = title;
-    bodyInput.value = content;
-    catSelect.value = category || 'general';
-    overlay.style.display = 'flex';
-
-    // 저장 버튼 — 기존 리스너 제거 후 재등록 (중복 방지)
-    const newSaveBtn = saveBtn.cloneNode(true);
-    saveBtn.parentNode.replaceChild(newSaveBtn, saveBtn);
-    newSaveBtn.addEventListener('click', async () => {
-      const editId      = document.getElementById('nedit-id').value;
+  // ── 저장 버튼 ──
+  document.addEventListener('click', async function(e) {
+    if (e.target && e.target.id === 'nedit-save-btn') {
       const editTitle   = document.getElementById('nedit-ttl').value.trim();
       const editContent = document.getElementById('nedit-body').value.trim();
       const editCat     = document.getElementById('nedit-cat').value;
       if (!editTitle || !editContent) { alert('제목과 내용을 입력해 주세요.'); return; }
-      newSaveBtn.textContent = '저장 중...'; newSaveBtn.disabled = true;
+      e.target.textContent = '저장 중...'; e.target.disabled = true;
       try {
-        await updateDoc(doc(db, 'notices', editId), {
+        await updateDoc(doc(db, 'notices', currentEditId), {
           title: editTitle, content: editContent, category: editCat
         });
-        overlay.style.display = 'none';
-        newSaveBtn.textContent = '저장하기'; newSaveBtn.disabled = false;
+        document.getElementById('nedit-overlay').style.display = 'none';
+        e.target.textContent = '저장하기'; e.target.disabled = false;
         await loadNotices();
         await loadAdminList();
         alert('수정되었습니다.');
-      } catch(e) {
-        newSaveBtn.textContent = '저장하기'; newSaveBtn.disabled = false;
-        alert('오류: ' + e.message);
+      } catch(err) {
+        e.target.textContent = '저장하기'; e.target.disabled = false;
+        alert('오류: ' + err.message);
       }
-    });
-
-    // 취소 버튼
-    const newCancelBtn = cancelBtn.cloneNode(true);
-    cancelBtn.parentNode.replaceChild(newCancelBtn, cancelBtn);
-    newCancelBtn.addEventListener('click', () => {
-      overlay.style.display = 'none';
-    });
-
-    // 배경 클릭 닫기
-    overlay.onclick = (e) => {
-      if (e.target === overlay) overlay.style.display = 'none';
-    };
-  }
+    }
+    // ── 취소 버튼 ──
+    if (e.target && e.target.id === 'nedit-cancel-btn') {
+      document.getElementById('nedit-overlay').style.display = 'none';
+    }
+    // ── 수정 모달 배경 클릭 ──
+    if (e.target && e.target.id === 'nedit-overlay') {
+      document.getElementById('nedit-overlay').style.display = 'none';
+    }
+  });
   document.getElementById('nadmin-overlay').addEventListener('click', e => {
     if (e.target === document.getElementById('nadmin-overlay')) closeAdminModal();
   });
