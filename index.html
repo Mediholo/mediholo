@@ -72,6 +72,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;height:64px;display:flex;ali
 .dropdown-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
 .nav-contact{font-size:0.78rem;font-weight:500;letter-spacing:0.06em;color:var(--white,#fff);background:var(--blue);padding:0.5rem 1.2rem;text-decoration:none;transition:background .2s;border:1px solid var(--blue)}
 .nav-contact:hover{background:var(--blue-light)}
+#lang-toggle:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
 
 /* ── HERO ── */
 .hero{min-height:100vh;position:relative;overflow:hidden;display:flex;flex-direction:column;padding:88px 5vw 80px;background:var(--bg);box-sizing:border-box;gap:0}
@@ -445,7 +446,7 @@ footer p{font-size:0.75rem;color:var(--text-dim)}
     <li class="nav-item"><a href="#notice">Notice</a></li>
     <li class="nav-item"><a href="#contact">Contact</a></li>
   </ul>
-  <a href="#contact" class="nav-contact">Get in touch</a>
+  <button id="lang-toggle" onclick="toggleLang()" style="background:transparent;border:1px solid var(--blue-border);color:var(--blue-light);font-family:'Pretendard Variable',Pretendard,sans-serif;font-size:0.75rem;font-weight:700;letter-spacing:0.08em;padding:0.4rem 0.85rem;border-radius:6px;cursor:pointer;transition:all .2s;margin-left:0.75rem;white-space:nowrap">KO | EN</button>
 </nav>
 
 <!-- ══ HERO ══ -->
@@ -1607,13 +1608,13 @@ const i18n = {
     hero_badge: 'Ultrasound Holography &amp; AI',
     hero_h1_1: 'Precision', hero_h1_2: 'Healthcare', hero_h1_3: 'through',
     hero_h1_4: 'Ultrasound', hero_h1_5: 'Holography',
-    hero_desc: 'World's first AI-based real-time ultrasound hologram generation.<br>Brain neuromodulation, 3D cell culture, non-destructive testing.<br>One platform, infinite possibilities.',
+    hero_desc: 'World\'s first AI-based real-time ultrasound hologram generation.<br>Brain neuromodulation, 3D cell culture, non-destructive testing.<br>One platform, infinite possibilities.',
     hero_cta: 'Explore Technology',
 
     // TECHNOLOGY
     tech_eyebrow: 'Core Technology',
     tech_h2: 'Ultrasound Holography<br><em>Core Technology</em>',
-    tech_desc: 'Led by the world's first AI-based real-time ultrasound hologram generation, our vertically integrated technology stack spans high-frequency imaging, AI analysis, and custom hologram lens fabrication.',
+    tech_desc: 'Led by the world\'s first AI-based real-time ultrasound hologram generation, our vertically integrated technology stack spans high-frequency imaging, AI analysis, and custom hologram lens fabrication.',
 
     // PRODUCTS
     prod_eyebrow: 'Product Line-up',
@@ -1641,7 +1642,7 @@ const i18n = {
     // ABOUT
     about_eyebrow: 'About MediHolo',
     about_h2: 'Defining the Future<br><em>of Healthcare with Ultrasound</em>',
-    about_desc: 'MediHolo is a deep-tech startup founded by Prof. Jaeyoon Hwang of DGIST, holding the world's first AI-based real-time ultrasound hologram generation technology.',
+    about_desc: 'MediHolo is a deep-tech startup founded by Prof. Jaeyoon Hwang of DGIST, holding the world\'s first AI-based real-time ultrasound hologram generation technology.',
     about_founded: 'Established May 8, 2026 — MediHolo Co., Ltd.',
     collab_eyebrow: 'Collaborators &amp; Partners',
 
@@ -1677,7 +1678,8 @@ let currentLang = 'ko';
 function toggleLang() {
   currentLang = currentLang === 'ko' ? 'en' : 'ko';
   applyLang(currentLang);
-  document.getElementById('lang-toggle').textContent = i18n[currentLang].lang_btn;
+  const btn = document.getElementById('lang-toggle');
+  if (btn) btn.textContent = currentLang === 'en' ? 'EN | KO' : 'KO | EN';
 }
 
 function applyLang(lang) {
