@@ -317,7 +317,7 @@ h2.disp em{font-style:normal;font-weight:300;color:var(--blue-light)}
 .contact-map-addr{margin-top:0.85rem;font-size:0.8rem;color:var(--text-muted);line-height:1.7}
 .contact-s{background:var(--bg);border-top:1px solid var(--border);padding:0}
 .contact-wrap{max-width:1200px;margin:0 auto;padding:0 5vw;display:grid;grid-template-columns:1fr 1.2fr;gap:0;min-height:520px}
-.contact-left{padding:80px 60px 80px 0;border-right:1px solid var(--border);display:flex;flex-direction:column}
+.contact-left{padding:80px 60px 80px 0;border-right:1px solid var(--border);display:flex;flex-direction:column;justify-content:center}
 .contact-right{padding:80px 0 80px 60px;background:var(--bg)}
 .contact-h{font-family:'Pretendard Variable',Pretendard,sans-serif;font-size:clamp(1.8rem,3.5vw,3rem);font-weight:800;line-height:1.1;letter-spacing:-0.03em;margin-bottom:1rem;color:var(--text)}
 .contact-h em{font-style:normal;font-weight:300;color:var(--blue-light)}
@@ -1071,11 +1071,11 @@ footer p{font-size:0.75rem;color:var(--text-dim)}
       </div>
 
       <!-- 지도 (왼쪽 하단) -->
-      <div style="margin-top:2rem;flex:1">
+      <div style="margin-top:2rem;flex:1;display:flex;flex-direction:column;justify-content:center;align-items:stretch">
         <div class="contact-map-title" id="i18n-map-title">📍 오시는 길</div>
         <iframe
           class="contact-map-frame"
-          src="https://www.openstreetmap.org/export/embed.html?bbox=128.4294%2C35.7695%2C128.4374%2C35.7735&layer=mapnik&marker=35.7715%2C128.4334"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3259.4!2d128.4542!3d35.7029!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x356f59edf45abcb7%3A0x984f996193da4fcb!2zREdJU1Qg7IKs7ZmU7ZqM7Zy8EKwoUjcp!5e0!3m2!1sko!2skr!4v1717000000000!5m2!1sko!2skr"
           allowfullscreen=""
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
