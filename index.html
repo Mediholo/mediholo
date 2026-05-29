@@ -417,6 +417,8 @@ footer p{font-size:0.75rem;color:var(--text-dim)}
   .spec-grid{grid-template-columns:1fr}
 }
 </style>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>emailjs.init("cAa92t1lNUab_iv7N");</script>
 </head>
 <body>
 
@@ -1040,19 +1042,14 @@ footer p{font-size:0.75rem;color:var(--text-dim)}
       <!-- 전송 안내 모달 -->
       <div id="cf-guide" class="cf-guide-overlay">
         <div class="cf-guide-box">
-          <div class="cf-guide-icon">✉</div>
-          <div class="cf-guide-title">메일 앱이 열렸습니다</div>
+          <div class="cf-guide-icon">✓</div>
+          <div class="cf-guide-title">문의가 전송되었습니다!</div>
           <p class="cf-guide-body">
-            작성하신 내용이 이메일로 자동 작성되었습니다.<br>
-            아래 순서대로 메일을 보내주세요.
+            MediHolo 팀이 빠른 시간 내에 답변 드리겠습니다.<br>
+            문의해 주셔서 감사합니다.
           </p>
           <div class="cf-guide-email">sales@mediholo.com</div>
-          <ul class="cf-guide-steps">
-            <li>메일 앱(Outlook·Gmail·Apple Mail 등)이 자동으로 열립니다.</li>
-            <li>받는 사람·제목·내용이 자동 입력되어 있습니다.</li>
-            <li>내용을 확인한 후 <strong style="color:var(--text)">보내기</strong>를 눌러 주세요.</li>
-          </ul>
-          <button id="cf-guide-close" class="cf-guide-close">확인했습니다</button>
+          <button id="cf-guide-close" class="cf-guide-close">확인</button>
         </div>
       </div>
 
@@ -1198,49 +1195,38 @@ sections.forEach(s=>sio.observe(s));
 document.getElementById('contact-form').addEventListener('submit', function(e){
   e.preventDefault();
   const f = e.target;
-  const name      = f.name.value.trim();
-  const company   = f.company.value.trim();
-  const email     = f.email.value.trim();
-  const phone     = f.phone.value.trim();
-  const inqType   = f.inquiry_type.options[f.inquiry_type.selectedIndex].text;
-  const product   = f.product.selectedIndex > 0 ? f.product.options[f.product.selectedIndex].text : '미선택';
-  const message   = f.message.value.trim();
+  const name    = f.name.value.trim();
+  const company = f.company.value.trim();
+  const email   = f.email.value.trim();
+  const phone   = f.phone.value.trim();
+  const inqType = f.inquiry_type.options[f.inquiry_type.selectedIndex].text;
+  const product = f.product.selectedIndex > 0 ? f.product.options[f.product.selectedIndex].text : '미선택';
+  const message = f.message.value.trim();
 
-  const subject = encodeURIComponent(`[MediHolo 문의] ${inqType} — ${name}`);
-  const body = encodeURIComponent(
-    `■ 이름: ${name}
-` +
-    `■ 소속: ${company || '없음'}
-` +
-    `■ 이메일: ${email}
-` +
-    `■ 연락처: ${phone || '없음'}
-` +
-    `■ 문의 유형: ${inqType}
-` +
-    `■ 관심 제품: ${product}
+  const submitBtn = f.querySelector('.cf-submit');
+  submitBtn.textContent = '전송 중...';
+  submitBtn.disabled = true;
 
-` +
-    `■ 메시지:
-${message}`
-  );
-
-  window.location.href = `mailto:sales@mediholo.com?subject=${subject}&body=${body}`;
-
-  // 성공 메시지 표시
-  setTimeout(()=>{
-    document.getElementById('contact-form').style.display = 'none';
-    const s = document.getElementById('cf-success');
-    s.style.display = 'block';
-    // 5초 후 폼 복원
-    setTimeout(()=>{
-      document.getElementById('contact-form').style.display = 'block';
-      document.getElementById('contact-form').reset();
-      s.style.display = 'none';
-    }, 5000);
-  }, 300);
+  emailjs.send('service_j59jyzk', 'template_0wixaau', {
+    name:         name,
+    company:      company || '없음',
+    email:        email,
+    phone:        phone || '없음',
+    inquiry_type: inqType,
+    product:      product,
+    message:      message
+  }).then(function() {
+    submitBtn.textContent = '확인 — Send Message';
+    submitBtn.disabled = false;
+    f.reset();
+    document.getElementById('cf-guide').style.display = 'flex';
+  }, function(error) {
+    submitBtn.textContent = '확인 — Send Message';
+    submitBtn.disabled = false;
+    alert('전송 실패: ' + JSON.stringify(error));
+  });
 });
-</script>
+</script></script>
 
 <!-- 수정 모달 -->
 <div class="nedit-overlay" id="nedit-overlay">
