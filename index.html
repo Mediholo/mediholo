@@ -310,9 +310,14 @@ h2.disp em{font-style:normal;font-weight:300;color:var(--blue-light)}
 }
 
 /* ── CONTACT ── */
+/* contact-map */
+.contact-map-inner{margin-top:1.5rem}
+.contact-map-title{font-family:'Pretendard Variable',Pretendard,sans-serif;font-size:0.78rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);margin-bottom:1rem}
+.contact-map-frame{width:100%;height:300px;border:none;border-radius:10px;overflow:hidden;filter:brightness(0.85) saturate(0.8)}
+.contact-map-addr{margin-top:0.85rem;font-size:0.8rem;color:var(--text-muted);line-height:1.7}
 .contact-s{background:var(--bg);border-top:1px solid var(--border);padding:0}
-.contact-wrap{max-width:1200px;margin:0 auto;padding:0 5vw;display:grid;grid-template-columns:1fr 1fr;gap:0;min-height:520px}
-.contact-left{padding:80px 60px 80px 0;border-right:1px solid var(--border)}
+.contact-wrap{max-width:1200px;margin:0 auto;padding:0 5vw;display:grid;grid-template-columns:1fr 1.2fr;gap:0;min-height:520px}
+.contact-left{padding:80px 60px 80px 0;border-right:1px solid var(--border);display:flex;flex-direction:column}
 .contact-right{padding:80px 0 80px 60px;background:var(--bg)}
 .contact-h{font-family:'Pretendard Variable',Pretendard,sans-serif;font-size:clamp(1.8rem,3.5vw,3rem);font-weight:800;line-height:1.1;letter-spacing:-0.03em;margin-bottom:1rem;color:var(--text)}
 .contact-h em{font-style:normal;font-weight:300;color:var(--blue-light)}
@@ -1064,6 +1069,25 @@ footer p{font-size:0.75rem;color:var(--text-dim)}
           </div>
         </div>
       </div>
+
+      <!-- 지도 (왼쪽 하단) -->
+      <div style="margin-top:2rem;flex:1">
+        <div class="contact-map-title" id="i18n-map-title">📍 오시는 길</div>
+        <iframe
+          class="contact-map-frame"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=128.4294%2C35.7695%2C128.4374%2C35.7735&layer=mapnik&marker=35.7715%2C128.4334"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="MediHolo 위치"
+          style="width:100%;height:220px;border:none;border-radius:10px">
+        </iframe>
+        <div class="contact-map-addr" id="i18n-map-addr">
+          <strong style="color:var(--text);font-size:0.85rem">주식회사 메디홀로</strong><br>
+          대구광역시 달성군 현풍읍<br>
+          테크노중앙대로 333, 산학협력관 507호
+        </div>
+      </div>
     </div>
 
     <!-- 오른쪽: 문의 폼 -->
@@ -1145,7 +1169,8 @@ footer p{font-size:0.75rem;color:var(--text-dim)}
         </div>
         <button type="submit" class="cf-submit" id="i18n-cf-submit">확인 — Send Message</button>
       </form>
-    </div>
+
+
 
   </div>
 </div>
@@ -1759,6 +1784,12 @@ function applyLang(lang) {
   setText($('i18n-notice-admin'), t.notice_admin);
 
   // ── FOOTER ──
+  // ── 지도 ──
+  setText($('i18n-map-title'), lang === 'ko' ? '📍 오시는 길' : '📍 How to Find Us');
+  setText($('i18n-map-addr'), lang === 'ko'
+    ? '<strong style="color:var(--text);font-size:0.85rem">주식회사 메디홀로</strong><br>대구광역시 달성군 현풍읍<br>테크노중앙대로 333<br>산학협력관 507호 스타트업오피스'
+    : '<strong style="color:var(--text);font-size:0.85rem">MediHolo Co., Ltd.</strong><br>Startup Office, Room 507<br>Industry-Academic Hall, 333 Techno Jungang-daero<br>Hyeonpung-eup, Dalseong-gun, Daegu, Korea');
+
   setText($('i18n-footer-addr'), lang === 'ko'
     ? '대구광역시 테크노중앙대로 333, 산학협력관 507호 스타트업오피스'
     : '333 Techno Jungang-daero, Hyeonpung-eup, Dalseong-gun, Daegu, Korea');
