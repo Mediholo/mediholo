@@ -186,7 +186,7 @@ h2.disp em{font-style:normal;font-weight:300;color:var(--blue-light)}
 .ptab.active.t-brain{border-bottom-color:var(--brain);color:var(--blue-light)}
 .ptab.active.t-cell{border-bottom-color:var(--cell);color:var(--cyan)}
 .ptab.active.t-acc{border-bottom-color:var(--acc);color:var(--acc)}
-.pane{display:none;margin-top:0}
+.pane{display:none;margin-top:0;overflow:hidden;width:100%}
 .pane.active{display:grid;grid-template-columns:5fr 7fr}
 .pane-vis{min-height:520px;background:var(--surface);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;border:1px solid var(--border);border-right:none}
 .pane-vis-inner{width:300px;height:300px;position:relative}
@@ -411,17 +411,51 @@ footer p{font-size:0.75rem;color:var(--text-dim)}
   .g-cols-3{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:640px){
-  /* Product pane — 세로 스택 */
+  /* ── Product pane — 세로 스택 ── */
   .pane.active{grid-template-columns:1fr;grid-template-rows:auto auto}
-  .pane-vis{min-height:240px;border-right:1px solid var(--border);border-bottom:none}
-  .pane-vis-inner{width:220px;height:220px}
-  .pane-body{padding:1.75rem;border-left:1px solid var(--border);border-top:none}
-  .pane-n{font-size:3rem}
-  .pane-title{font-size:1.8rem}
-  .kpi-row{grid-template-columns:1fr 1fr}
+  /* 이미지 영역: 가로 전체, 높이 제한, overflow 제거 */
+  .pane-vis{
+    min-height:200px;
+    max-height:260px;
+    width:100%;
+    border-right:1px solid var(--border);
+    border-bottom:none;
+    overflow:hidden;
+  }
+  /* 이미지 자체도 꽉 채우기 */
+  .pane-vis img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    padding:1rem;
+  }
+  .pane-vis-inner{width:180px;height:180px}
+  /* 내용 영역 */
+  .pane-body{
+    padding:1.25rem 1rem;
+    border-left:1px solid var(--border);
+    border-top:none;
+    overflow:hidden;
+  }
+  .pane-n{font-size:2.5rem}
+  .pane-title{font-size:1.6rem}
+  .pane-sub{font-size:0.75rem}
+  .pane-desc{font-size:0.82rem;line-height:1.65}
+  .feat-list{padding-left:0}
+  .feat-list li{font-size:0.8rem;line-height:1.6}
+  .kpi-row{grid-template-columns:1fr 1fr;gap:0.5rem}
+  .kpi-v{font-size:1.5rem}
+  .kpi-l{font-size:0.65rem}
   /* Product tabs */
-  .prod-tabs{flex-wrap:wrap;gap:0.4rem}
-  .ptab{font-size:0.7rem;padding:0.5rem 0.75rem}
+  .prod-tabs{flex-wrap:wrap;gap:0.35rem;padding:0 0.5rem}
+  .ptab{font-size:0.68rem;padding:0.45rem 0.65rem;flex:1;text-align:center;min-width:calc(50% - 0.35rem)}
+  /* Spec grid — 2컬럼으로 (텍스트 잘림 방지) */
+  .spec-grid{grid-template-columns:1fr 1fr}
+  .spec-cell{padding:1rem 0.85rem}
+  .spec-key{font-size:0.62rem;word-break:keep-all;line-height:1.4}
+  .spec-val{font-size:1.1rem;word-break:break-word;line-height:1.3}
+  .spec-desc{font-size:0.72rem;word-break:keep-all;line-height:1.4}
+  /* 기타 */
   .nav-main{display:none}
   .hero{padding:76px 5vw 56px}
   h1.hero-h{font-size:clamp(1.7rem,7vw,2.6rem);line-height:1.15;margin-bottom:1rem}
@@ -435,8 +469,6 @@ footer p{font-size:0.75rem;color:var(--text-dim)}
   .nitem{border-right:none;border-bottom:1px solid var(--border)}
   .app-grid{grid-template-columns:1fr}
   .patent-row{grid-template-columns:1fr}
-  .kpi-row{grid-template-columns:1fr}
-  .spec-grid{grid-template-columns:1fr}
 }
 </style>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
