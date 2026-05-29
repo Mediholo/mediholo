@@ -340,7 +340,7 @@ h2.disp em{font-style:normal;font-weight:300;color:var(--blue-light)}
 .cf-submit:active{transform:translateY(0)}
 .cf-success{display:none}
 /* 안내 모달 */
-.cf-guide-overlay{display:none;position:fixed;inset:0;background:rgba(4,8,15,0.75);z-index:1000;align-items:center;justify-content:center;padding:2rem}
+.cf-guide-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;width:100%;height:100%;background:rgba(4,8,15,0.8);z-index:99999;align-items:center;justify-content:center;padding:2rem;box-sizing:border-box}
 .cf-guide-box{background:var(--surface);border:1px solid var(--blue-border);border-radius:14px;padding:2.5rem;max-width:460px;width:100%;text-align:center}
 .cf-guide-icon{width:52px;height:52px;border-radius:50%;border:1.5px solid var(--blue-light);display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;font-size:1.3rem}
 .cf-guide-title{font-family:'Pretendard Variable',Pretendard,sans-serif;font-size:1.15rem;font-weight:700;color:var(--text);margin-bottom:0.75rem}
@@ -1219,7 +1219,16 @@ document.getElementById('contact-form').addEventListener('submit', function(e){
     submitBtn.textContent = '확인 — Send Message';
     submitBtn.disabled = false;
     f.reset();
-    document.getElementById('cf-guide').style.display = 'flex';
+    const overlay = document.getElementById('cf-guide');
+    overlay.style.display = 'flex';
+    overlay.style.position = 'fixed';
+    overlay.style.top = '0';
+    overlay.style.left = '0';
+    overlay.style.width = '100%';
+    overlay.style.height = '100%';
+    overlay.style.zIndex = '99999';
+    overlay.style.alignItems = 'center';
+    overlay.style.justifyContent = 'center';
   }, function(error) {
     submitBtn.textContent = '확인 — Send Message';
     submitBtn.disabled = false;
@@ -1229,7 +1238,8 @@ document.getElementById('contact-form').addEventListener('submit', function(e){
 
 // ── 팝업 닫기 ──
 document.getElementById('cf-guide-close').addEventListener('click', function(){
-  document.getElementById('cf-guide').style.display = 'none';
+  const ov = document.getElementById('cf-guide');
+  ov.style.display = 'none';
 });
 document.getElementById('cf-guide').addEventListener('click', function(e){
   if (e.target === this) this.style.display = 'none';
