@@ -1075,7 +1075,7 @@ footer p{font-size:0.75rem;color:var(--text-dim)}
         <div class="contact-map-title" id="i18n-map-title">📍 오시는 길</div>
         <iframe
           class="contact-map-frame"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3259.4!2d128.4542!3d35.7029!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x356f59edf45abcb7%3A0x984f996193da4fcb!2zREdJU1Qg7IKs7ZmU7ZqM7Zy8EKwoUjcp!5e0!3m2!1sko!2skr!4v1717000000000!5m2!1sko!2skr"
+          id="contact-map-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3259.4!2d128.4542!3d35.7029!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x356f59edf45abcb7%3A0x984f996193da4fcb!2zREdJU1Qg7IKs7ZmU7ZqM7Zy8EKwoUjcp!5e0!3m2!1sko!2skr!4v1717000000000!5m2!1sko!2skr"
           allowfullscreen=""
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
@@ -1786,6 +1786,12 @@ function applyLang(lang) {
   // ── FOOTER ──
   // ── 지도 ──
   setText($('i18n-map-title'), lang === 'ko' ? '📍 오시는 길' : '📍 How to Find Us');
+  const mapIframe = document.getElementById('contact-map-iframe');
+  if (mapIframe) {
+    mapIframe.src = lang === 'ko'
+      ? 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3259.4!2d128.4542!3d35.7029!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x356f59edf45abcb7%3A0x984f996193da4fcb!2zREdJU1Qg7IKs7ZmU7ZqM7Zy8EKwoUjcp!5e0!3m2!1sko!2skr!4v1717000000000!5m2!1sko!2skr'
+      : 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3259.4!2d128.4542!3d35.7029!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x356f59edf45abcb7%3A0x984f996193da4fcb!2zREdJU1Qg7IKs7ZmU7ZqM7Zy8EKwoUjcp!5e0!3m2!1sen!2sus!4v1717000000000!5m2!1sen!2sus';
+  }
   setText($('i18n-map-addr'), lang === 'ko'
     ? '<strong style="color:var(--text);font-size:0.85rem">주식회사 메디홀로</strong><br>대구광역시 달성군 현풍읍<br>테크노중앙대로 333<br>산학협력관 507호 스타트업오피스'
     : '<strong style="color:var(--text);font-size:0.85rem">MediHolo Co., Ltd.</strong><br>Startup Office, Room 507<br>Industry-Academic Hall, 333 Techno Jungang-daero<br>Hyeonpung-eup, Dalseong-gun, Daegu, Korea');
