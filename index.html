@@ -1226,6 +1226,14 @@ document.getElementById('contact-form').addEventListener('submit', function(e){
     alert('전송 실패: ' + JSON.stringify(error));
   });
 });
+
+// ── 팝업 닫기 ──
+document.getElementById('cf-guide-close').addEventListener('click', function(){
+  document.getElementById('cf-guide').style.display = 'none';
+});
+document.getElementById('cf-guide').addEventListener('click', function(e){
+  if (e.target === this) this.style.display = 'none';
+});
 </script></script>
 
 <!-- 수정 모달 -->
