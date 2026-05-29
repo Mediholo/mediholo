@@ -43,15 +43,15 @@ html{scroll-behavior:smooth}
   --acc-border:rgba(240,180,41,0.25);
 }
 body{background:var(--bg);color:var(--text);font-family:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo',Roboto,'Noto Sans KR','Segoe UI','Malgun Gothic',sans-serif;font-weight:300;line-height:1.65;overflow-x:hidden}
- 
- 
+
+
 .logo-img { display:flex; align-items:center; text-decoration:none; flex-shrink:0; }
 .logo-img-el { height:44px; width:auto; display:block; transition:opacity .2s; }
 .logo-img:hover .logo-img-el { opacity:0.75; }
 .footer-logo-img { margin-bottom:0.5rem; display:flex; }
 .footer-logo-el { height:32px; width:auto; display:block; opacity:0.55; transition:opacity .2s; }
 .footer-logo-img:hover .footer-logo-el { opacity:0.85; }
- 
+
 /* ── NAV ── */
 nav{position:fixed;top:0;left:0;right:0;z-index:300;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;background:rgba(4,8,15,0.9);border-bottom:1px solid var(--border);backdrop-filter:blur(16px)}
 .logo{font-family:'Pretendard Variable',Pretendard,sans-serif;font-size:1.35rem;color:var(--text);text-decoration:none;letter-spacing:-0.01em}
@@ -72,7 +72,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;height:64px;display:flex;ali
 .dropdown-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
 .nav-contact{font-size:0.78rem;font-weight:500;letter-spacing:0.06em;color:var(--white,#fff);background:var(--blue);padding:0.5rem 1.2rem;text-decoration:none;transition:background .2s;border:1px solid var(--blue)}
 .nav-contact:hover{background:var(--blue-light)}
- 
+
 /* ── HERO ── */
 .hero{min-height:100vh;position:relative;overflow:hidden;display:flex;flex-direction:column;padding:88px 5vw 80px;background:var(--bg);box-sizing:border-box;gap:0}
 .hero-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(26,107,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(26,107,255,0.04) 1px,transparent 1px);background-size:64px 64px}
@@ -107,7 +107,7 @@ h1.hero-h em{font-style:normal;font-weight:300;color:var(--blue-light);opacity:0
 .hpill.p2{border-color:var(--brain-border);color:var(--blue-light)}
 .hpill.p3{border-color:var(--cell-border);color:var(--cyan)}
 .hpill.p4{border-color:var(--acc-border);color:var(--acc)}
- 
+
 /* ── SHARED ── */
 .wrap{max-width:1360px;margin:0 auto;padding:0 5vw}
 .sec{padding:100px 0}
@@ -123,7 +123,7 @@ h2.disp em{font-style:normal;font-weight:300;color:var(--blue-light)}
 .four-col{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
 .sep-line{border:none;border-top:1px solid var(--border);margin:0}
 .label-sm{font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);font-weight:500}
- 
+
 /* grid of cells */
 .g-grid{display:grid;gap:1px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.06)}
 .g-cell{background:var(--bg);padding:2.5rem 2rem}
@@ -132,25 +132,25 @@ h2.disp em{font-style:normal;font-weight:300;color:var(--blue-light)}
 .g-cols-3{grid-template-columns:repeat(3,1fr)}
 .g-cols-2{grid-template-columns:repeat(2,1fr)}
 .g-cols-5{grid-template-columns:repeat(5,1fr)}
- 
+
 /* stat */
 .stat-num{font-family:'Pretendard Variable',Pretendard,sans-serif;font-size:3rem;font-weight:700;line-height:1;letter-spacing:-0.03em;color:var(--text);margin-bottom:0.5rem}
 .stat-lbl{font-size:0.82rem;color:var(--text-muted);line-height:1.5}
 .stat-accent{color:var(--blue-light)}
- 
+
 /* ── NUMBERS BAR ── */
 .nums-row{display:flex;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-top:5rem}
 .nitem{flex:1;padding:2.5rem 2rem;border-right:1px solid var(--border)}
 .nitem:last-child{border-right:none}
 .nbig{font-family:'Pretendard Variable',Pretendard,sans-serif;font-size:3rem;font-weight:700;letter-spacing:-0.03em;color:var(--blue-light);display:block;margin-bottom:0.4rem}
 .nlbl{font-size:0.8rem;color:var(--text-muted);line-height:1.5}
- 
+
 /* ── TECHNOLOGY ── */
 .tech-hero-row{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;margin-bottom:5rem}
 .tech-diagram{position:relative;height:440px;display:flex;align-items:center;justify-content:center}
 .tech-diag-inner{position:relative;width:380px;height:380px}
 .tech-diag-inner svg{width:100%;height:100%}
- 
+
 /* tech cards */
 .tech-card{background:var(--surface);border:1px solid var(--border);padding:2rem;transition:border-color .2s,background .2s}
 .tech-card:hover{border-color:var(--blue-border);background:var(--surface2)}
@@ -159,14 +159,14 @@ h2.disp em{font-style:normal;font-weight:300;color:var(--blue-light)}
 .tech-card p{font-size:0.85rem;color:var(--text-muted);line-height:1.75}
 .tech-card .tc-foot{margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
 .tc-badge{font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;font-weight:500;padding:0.3rem 0.7rem;border:1px solid;display:inline-block}
- 
+
 /* deep tech specs */
 .spec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.05);margin-top:1px}
 .spec-cell{background:var(--bg2);padding:1.75rem 1.5rem}
 .spec-key{font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);margin-bottom:0.5rem;display:block}
 .spec-val{font-family:'Pretendard Variable',Pretendard,sans-serif;font-size:1.6rem;letter-spacing:-0.02em;color:var(--blue-light);display:block;margin-bottom:0.25rem}
 .spec-desc{font-size:0.78rem;color:var(--text-muted);line-height:1.55}
- 
+
 /* patent row */
 .patent-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.05);margin-top:3rem}
 .patent-cell{background:var(--surface);padding:2rem}
@@ -174,7 +174,7 @@ h2.disp em{font-style:normal;font-weight:300;color:var(--blue-light)}
 .patent-lbl{font-size:0.78rem;color:var(--text-muted)}
 .patent-tags{display:flex;flex-wrap:wrap;gap:0.35rem;margin-top:1rem}
 .ptag{font-size:0.68rem;padding:0.25rem 0.65rem;border:1px solid var(--border2);color:var(--text-dim);letter-spacing:0.03em}
- 
+
 /* ── PRODUCTS ── */
 .prod-tabs-wrap{margin-top:3rem}
 .prod-tabs{display:flex;gap:0;border-bottom:1px solid var(--border2);overflow-x:auto}
@@ -201,7 +201,7 @@ h2.disp em{font-style:normal;font-weight:300;color:var(--blue-light)}
 .kpi-cell{background:var(--surface);padding:1.25rem;text-align:center}
 .kpi-v{font-family:'Pretendard Variable',Pretendard,sans-serif;font-size:1.8rem;letter-spacing:-0.02em;display:block;margin-bottom:0.15rem}
 .kpi-l{font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-dim)}
- 
+
 /* ── APPLICATIONS ── */
 .app-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.5rem}
 .app-card{background:var(--surface);border:1px solid var(--border);padding:2rem;transition:border-color .2s,background .2s;cursor:default}
@@ -210,7 +210,7 @@ h2.disp em{font-style:normal;font-weight:300;color:var(--blue-light)}
 .app-title{font-family:'Pretendard Variable',Pretendard,sans-serif;font-size:1.15rem;font-weight:700;margin-bottom:0.6rem;line-height:1.3}
 .app-body{font-size:0.83rem;color:var(--text-muted);line-height:1.75}
 .app-tag{margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid var(--border);font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-dim)}
- 
+
 /* ── ABOUT ── */
 .about-2col{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
 .about-list{list-style:none;display:flex;flex-direction:column;gap:0}
@@ -220,8 +220,8 @@ h2.disp em{font-style:normal;font-weight:300;color:var(--blue-light)}
 .partner-row{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:2.5rem}
 .ptag2{font-size:0.75rem;color:var(--text-muted);padding:0.4rem 0.9rem;border:1px solid var(--border);background:var(--surface);transition:border-color .2s}
 .ptag2:hover{border-color:var(--blue-border)}
- 
- 
+
+
 /* ── PARTNER LOGOS ── */
 .partner-logos-row{
   display:flex;flex-wrap:wrap;gap:1.5rem;align-items:center;
@@ -249,8 +249,8 @@ h2.disp em{font-style:normal;font-weight:300;color:var(--blue-light)}
 .partner-logo-card.bg-dark{background:#000000;}
 .partner-logo-card.bg-light{background:#ffffff;}
 .partner-logo-card.bg-blue{background:#eef3fb;}
- 
- 
+
+
 /* ── NOTICE BOARD ── */
 .notice-s{padding:100px 0;background:var(--bg);border-top:1px solid var(--border)}
 .notice-inner{max-width:900px;margin:0 auto;padding:0 5vw}
@@ -307,7 +307,7 @@ h2.disp em{font-style:normal;font-weight:300;color:var(--blue-light)}
   .notice-item-header{grid-template-columns:auto 1fr auto;gap:0.5rem}
   .notice-date{display:none}
 }
- 
+
 /* ── CONTACT ── */
 .contact-s{background:var(--bg);border-top:1px solid var(--border);padding:0}
 .contact-wrap{max-width:1200px;margin:0 auto;padding:0 5vw;display:grid;grid-template-columns:1fr 1fr;gap:0;min-height:520px}
@@ -366,7 +366,7 @@ h2.disp em{font-style:normal;font-weight:300;color:var(--blue-light)}
 .btn-blue:hover{background:var(--blue-light)}
 .btn-ghost{font-size:0.82rem;font-weight:400;letter-spacing:0.05em;color:var(--text-muted);border:1px solid var(--border2);padding:0.75rem 1.75rem;text-decoration:none;transition:all .2s}
 .btn-ghost:hover{color:var(--text);border-color:var(--blue-border)}
- 
+
 /* ── FOOTER ── */
 footer{background:var(--bg);border-top:1px solid var(--border);padding:2.5rem 5vw;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
 .footer-logo{font-family:'Pretendard Variable',Pretendard,sans-serif;font-size:1rem}
@@ -375,12 +375,12 @@ footer p{font-size:0.75rem;color:var(--text-dim)}
 .footer-links{display:flex;gap:1.75rem}
 .footer-links a{font-size:0.75rem;color:var(--text-dim);text-decoration:none;transition:color .2s}
 .footer-links a:hover{color:var(--text)}
- 
+
 /* ── REVEAL ── */
 .rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
 .rv.in{opacity:1;transform:translateY(0)}
 .rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}
- 
+
 /* ── RESPONSIVE ── */
 @media(max-width:1024px){
   .hero{padding:80px 5vw 60px}
@@ -419,7 +419,7 @@ footer p{font-size:0.75rem;color:var(--text-dim)}
 </style>
 </head>
 <body>
- 
+
 <!-- ══ NAV ══ -->
 <nav>
   <a href="#home" class="logo-img"><img src="data:image/png;base64,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" alt="MediHolo" class="logo-img-el"></a>
@@ -445,7 +445,7 @@ footer p{font-size:0.75rem;color:var(--text-dim)}
   </ul>
   <a href="#contact" class="nav-contact">Get in touch</a>
 </nav>
- 
+
 <!-- ══ HERO ══ -->
 <section class="hero" id="home">
   <div class="hero-grid-bg"></div>
@@ -480,7 +480,7 @@ footer p{font-size:0.75rem;color:var(--text-dim)}
     </div>
   </div>
 </section>
- 
+
 <!-- ══ KEY NUMBERS ══ -->
 <div class="wrap">
   <div class="nums-row rv">
@@ -502,7 +502,7 @@ footer p{font-size:0.75rem;color:var(--text-dim)}
     </div>
   </div>
 </div>
- 
+
 <!-- ══ TECHNOLOGY ══ -->
 <section class="sec sec-alt" id="technology">
   <div class="wrap">
@@ -572,7 +572,7 @@ footer p{font-size:0.75rem;color:var(--text-dim)}
         </div>
       </div>
     </div>
- 
+
     <!-- 4 tech cards -->
     <div class="g-grid g-cols-4 rv">
       <div class="tech-card g-cell-alt">
@@ -612,7 +612,7 @@ footer p{font-size:0.75rem;color:var(--text-dim)}
         </div>
       </div>
     </div>
- 
+
     <!-- Tech specs -->
     <div style="margin-top:3rem">
       <div class="eyebrow rv" style="margin-bottom:1.25rem">Technical Specifications</div>
@@ -649,7 +649,7 @@ footer p{font-size:0.75rem;color:var(--text-dim)}
         </div>
       </div>
     </div>
- 
+
     <!-- Patents -->
     <div class="patent-row rv">
       <div class="patent-cell">
@@ -685,13 +685,13 @@ footer p{font-size:0.75rem;color:var(--text-dim)}
     </div>
   </div>
 </section>
- 
+
 <!-- ══ PRODUCTS ══ -->
 <section class="sec" id="products">
   <div class="wrap">
     <div class="eyebrow rv">Product Line-up</div>
     <h2 class="disp rv">3가지 핵심 제품군</h2>
- 
+
     <!-- 메인 시스템 이미지 + 설명 2컬럼 -->
     <div class="rv" style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;margin-bottom:3.5rem;background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden">
       <!-- 메인 제품 사진 -->
@@ -739,14 +739,14 @@ footer p{font-size:0.75rem;color:var(--text-dim)}
         </div>
       </div>
     </div>
- 
+
     <div class="prod-tabs-wrap rv">
       <div class="prod-tabs">
         <button class="ptab active t-brain" data-pane="prod-brain">01 — HoloStim <span style="opacity:0.55;font-weight:300;font-size:0.85em">Brain</span></button>
         <button class="ptab t-cell"    data-pane="prod-cell">02 — HoloStim <span style="opacity:0.55;font-weight:300;font-size:0.85em">Cell</span></button>
         <button class="ptab t-acc"     data-pane="prod-acc">03 — HoloStim Accessory</button>
       </div>
- 
+
       <!-- BRAIN -->
       <div class="pane active" id="prod-brain">
         <div class="pane-vis" style="background:var(--bg);position:relative">
@@ -783,7 +783,7 @@ footer p{font-size:0.75rem;color:var(--text-dim)}
           </div>
         </div>
       </div>
- 
+
       <!-- CELL -->
       <div class="pane" id="prod-cell">
         <div class="pane-vis" style="background:var(--bg);position:relative">
@@ -821,7 +821,7 @@ footer p{font-size:0.75rem;color:var(--text-dim)}
           </div>
         </div>
       </div>
- 
+
       <!-- ACCESSORY -->
       <div class="pane" id="prod-acc">
         <div class="pane-vis">
@@ -860,9 +860,64 @@ footer p{font-size:0.75rem;color:var(--text-dim)}
           </div>
         </div>
       </div>
- 
+
+
+<!-- ══ APPLICATIONS ══ -->
+<section id="applications" style="padding:100px 0;background:var(--surface);border-top:1px solid var(--border)">
+  <div style="max-width:1200px;margin:0 auto;padding:0 5vw">
+    <div class="eyebrow rv" style="margin-bottom:1rem">Applications</div>
+    <h2 class="disp rv" style="margin-bottom:0.75rem">적용 분야</h2>
+    <p class="body-lg rv d1" style="margin-bottom:3rem">초음파 홀로그램 원천 기술을 바탕으로 뇌신경·세포·비파괴검사 분야에서 혁신적인 솔루션을 제공합니다.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem">
+
+      <div class="app-card">
+        <div class="app-icon" style="border-color:var(--brain-border)">◈</div>
+        <h3 class="app-title">신경병증성 통증 치료</h3>
+        <p class="app-body">당뇨·대상포진·외상에 의한 만성 신경 통증의 비침습적 치료. 기존 약물 40~60% 포기율 환자에게 안전하고 효과적인 대안 제공. 신경과·통증의학과 적용.</p>
+        <div class="app-tag" style="color:var(--blue-light)">HoloStim Brain</div>
+      </div>
+
+      <div class="app-card">
+        <div class="app-icon" style="border-color:var(--brain-border)">◇</div>
+        <h3 class="app-title">뇌활성화 · 정신건강</h3>
+        <p class="app-body">수면 장애·우울·불안의 비침습적 뇌 심부 자극. Pain-Sleep-Mood Loop 통합 관리. 정신건강의학과·한방병원·웰니스 클리닉 확장.</p>
+        <div class="app-tag" style="color:var(--blue-light)">HoloStim Brain</div>
+      </div>
+
+      <div class="app-card">
+        <div class="app-icon" style="border-color:var(--cell-border)">⬡</div>
+        <h3 class="app-title">3D 세포 배양 · 연구</h3>
+        <p class="app-body">오가노이드·3D 세포 배양 정밀 초음파 자극 플랫폼. 세포 괴사율 감소 및 조직 건강상태 정량 AI 분석. 대학·연구소·바이오·제약 기업 적용.</p>
+        <div class="app-tag" style="color:var(--cyan)">HoloStim Cell</div>
+      </div>
+
+      <div class="app-card">
+        <div class="app-icon" style="border-color:var(--cell-border)">⬢</div>
+        <h3 class="app-title">세포치료제 생산</h3>
+        <p class="app-body">개인 맞춤형 세포 합성·치료를 위한 분산형 3D 세포 생산 플랫폼. CAR-T·줄기세포 치료제 제조 공정 효율화.</p>
+        <div class="app-tag" style="color:var(--cyan)">HoloStim Cell</div>
+      </div>
+
+      <div class="app-card">
+        <div class="app-icon" style="border-color:rgba(255,255,255,0.2)">◻</div>
+        <h3 class="app-title">비파괴검사</h3>
+        <p class="app-body">>20MHz 고주파 초음파 트랜스듀서를 이용한 정밀 비파괴검사. 산업용 부품·소재의 내부 결함 검출 및 품질 분석.</p>
+        <div class="app-tag" style="color:var(--text-muted)">HoloStim Cell · Accessory</div>
+      </div>
+
+      <div class="app-card">
+        <div class="app-icon" style="border-color:rgba(255,255,255,0.2)">◈</div>
+        <h3 class="app-title">AI 멀티모달 영상 분석</h3>
+        <p class="app-body">분광·형광·초음파 영상 데이터를 융합한 AI 멀티모달 분석 플랫폼. 조직·세포 상태 정량화 및 진단 보조.</p>
+        <div class="app-tag" style="color:var(--text-muted)">AI 멀티모달 영상 분석</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- ══ CONTACT ══ -->
- 
+
 <!-- ── NOTICE BOARD ── -->
 <section class="notice-s" id="notice">
   <div class="notice-inner">
@@ -873,7 +928,7 @@ footer p{font-size:0.75rem;color:var(--text-dim)}
       </div>
       <button class="notice-admin-btn" id="nadmin-open-btn">관리자 ⚙</button>
     </div>
- 
+
     <!-- 게시글 목록 -->
     <div class="notice-list" id="notice-list">
       <div class="notice-loading" id="notice-loading">게시글을 불러오는 중...</div>
@@ -883,11 +938,11 @@ footer p{font-size:0.75rem;color:var(--text-dim)}
     </div>
   </div>
 </section>
- 
+
 <!-- 관리자 모달 -->
 <div class="nadmin-overlay" id="nadmin-overlay">
   <div class="nadmin-box">
- 
+
     <!-- Step 1: 비밀번호 확인 -->
     <div id="nadmin-auth">
       <div class="nadmin-title">🔒 관리자 로그인</div>
@@ -901,11 +956,11 @@ footer p{font-size:0.75rem;color:var(--text-dim)}
       </div>
       <button class="nadmin-cancel" onclick="closeAdminModal()">취소</button>
     </div>
- 
+
     <!-- Step 2: 관리자 패널 -->
     <div id="nadmin-panel" style="display:none">
       <div class="nadmin-title">⚙ 공지사항 관리</div>
- 
+
       <!-- 새 글 작성 -->
       <div style="background:var(--bg);border-radius:8px;padding:1.25rem;margin-bottom:1.5rem;border:1px solid var(--border)">
         <div style="font-size:0.8rem;font-weight:600;color:var(--blue-light);margin-bottom:1rem;letter-spacing:0.06em;text-transform:uppercase">새 공지 작성</div>
@@ -929,7 +984,7 @@ footer p{font-size:0.75rem;color:var(--text-dim)}
           <button class="nadmin-cancel" onclick="closeAdminModal()">닫기</button>
         </div>
       </div>
- 
+
       <!-- 기존 글 목록 -->
       <div>
         <div style="font-size:0.8rem;font-weight:600;color:var(--text-dim);margin-bottom:0.75rem;letter-spacing:0.06em;text-transform:uppercase">게시된 공지 목록</div>
@@ -938,13 +993,13 @@ footer p{font-size:0.75rem;color:var(--text-dim)}
         </div>
       </div>
     </div>
- 
+
   </div>
 </div>
- 
+
 <div class="contact-s" id="contact">
   <div class="contact-wrap">
- 
+
     <!-- 왼쪽: 소개 + 연락처 정보 -->
     <div class="contact-left">
       <span class="eyebrow" style="margin-bottom:1rem">Contact Us</span>
@@ -977,11 +1032,11 @@ footer p{font-size:0.75rem;color:var(--text-dim)}
         </div>
       </div>
     </div>
- 
+
     <!-- 오른쪽: 문의 폼 -->
     <div class="contact-right">
       <div class="cf-title">문의하기 — Send a Message</div>
- 
+
       <!-- 전송 안내 모달 -->
       <div id="cf-guide" class="cf-guide-overlay">
         <div class="cf-guide-box">
@@ -1000,7 +1055,7 @@ footer p{font-size:0.75rem;color:var(--text-dim)}
           <button id="cf-guide-close" class="cf-guide-close">확인했습니다</button>
         </div>
       </div>
- 
+
       <form id="contact-form">
         <div class="cf-row">
           <div class="cf-group">
@@ -1057,10 +1112,10 @@ footer p{font-size:0.75rem;color:var(--text-dim)}
         <button type="submit" class="cf-submit">확인 — Send Message</button>
       </form>
     </div>
- 
+
   </div>
 </div>
- 
+
 <!-- ══ FOOTER ══ -->
 <footer>
   <div>
@@ -1077,7 +1132,7 @@ footer p{font-size:0.75rem;color:var(--text-dim)}
   </div>
   <p>© 2026 MediHolo. All rights reserved.</p>
 </footer>
- 
+
 <script>
 /* ── Tab switching ── */
 document.querySelectorAll('.ptab').forEach(btn=>{
@@ -1093,13 +1148,13 @@ document.querySelectorAll('.ptab').forEach(btn=>{
     if(target) target.classList.add('active');
   });
 });
- 
+
 /* ── Scroll reveal ── */
 const rio=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');});
 },{threshold:0.07});
 document.querySelectorAll('.rv').forEach(el=>rio.observe(el));
- 
+
 /* ── Counter animation ── */
 function easeOut(t){return 1-Math.pow(1-t,3)}
 function animateCount(el){
@@ -1124,7 +1179,7 @@ const cio=new IntersectionObserver(entries=>{
   });
 },{threshold:0.5});
 document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
- 
+
 /* ── Active nav highlight on scroll ── */
 const sections=document.querySelectorAll('section[id],div[id="contact"]');
 const navLinks=document.querySelectorAll('.nav-item>a');
@@ -1150,7 +1205,7 @@ document.getElementById('contact-form').addEventListener('submit', function(e){
   const inqType   = f.inquiry_type.options[f.inquiry_type.selectedIndex].text;
   const product   = f.product.selectedIndex > 0 ? f.product.options[f.product.selectedIndex].text : '미선택';
   const message   = f.message.value.trim();
- 
+
   const subject = encodeURIComponent(`[MediHolo 문의] ${inqType} — ${name}`);
   const body = encodeURIComponent(
     `■ 이름: ${name}
@@ -1164,14 +1219,14 @@ document.getElementById('contact-form').addEventListener('submit', function(e){
     `■ 문의 유형: ${inqType}
 ` +
     `■ 관심 제품: ${product}
- 
+
 ` +
     `■ 메시지:
 ${message}`
   );
- 
+
   window.location.href = `mailto:sales@mediholo.com?subject=${subject}&body=${body}`;
- 
+
   // 성공 메시지 표시
   setTimeout(()=>{
     document.getElementById('contact-form').style.display = 'none';
@@ -1186,7 +1241,7 @@ ${message}`
   }, 300);
 });
 </script>
- 
+
 <!-- 수정 모달 -->
 <div class="nedit-overlay" id="nedit-overlay">
   <div class="nedit-box">
@@ -1213,13 +1268,13 @@ ${message}`
     </div>
   </div>
 </div>
- 
+
 <!-- Firebase SDK -->
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
   import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc, orderBy, query, serverTimestamp, updateDoc }
     from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
- 
+
   // ── Firebase 설정 (본인 프로젝트 설정으로 교체) ──
   const firebaseConfig = {
     apiKey:            "AIzaSyC5ezHKn7jZYCUB_l2Q98x-orKqxgLpggs",
@@ -1230,13 +1285,13 @@ ${message}`
     appId:             "1:1026150380231:web:a4294d3472446b892884e2",
     measurementId:     "G-SX12YSPSSJ"
   };
- 
+
   const app = initializeApp(firebaseConfig);
   const db  = getFirestore(app);
- 
+
   // ── 관리자 비밀번호 (여기서 변경) ──
   const ADMIN_PW = "mediholo2024!";
- 
+
   // ── 날짜 포맷 ──
   function fmtDate(ts) {
     if (!ts) return '';
@@ -1244,7 +1299,7 @@ ${message}`
     return d.toLocaleDateString('ko-KR', { year:'numeric', month:'2-digit', day:'2-digit' })
              .replace(/\. /g,'.').replace('.','');
   }
- 
+
   // ── 게시글 렌더링 ──
   async function loadNotices() {
     const listEl   = document.getElementById('notice-list');
@@ -1283,11 +1338,11 @@ ${message}`
       console.error(e);
     }
   }
- 
+
   function escHtml(s) {
     return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
   }
- 
+
   // ── 관리자 패널 게시글 목록 ──
   async function loadAdminList() {
     const wrap = document.getElementById('nadmin-list-wrap');
@@ -1319,7 +1374,7 @@ ${message}`
       wrap.appendChild(row);
     });
   }
- 
+
   // ── 관리자 인증 ──
   let authenticated = false;
   document.getElementById('nadmin-open-btn').addEventListener('click', () => {
@@ -1330,7 +1385,7 @@ ${message}`
       loadAdminList();
     }
   });
- 
+
   document.getElementById('nadmin-pw-btn').addEventListener('click', () => {
     const pw  = document.getElementById('nadmin-pw').value;
     const err = document.getElementById('nadmin-pw-err');
@@ -1347,7 +1402,7 @@ ${message}`
   document.getElementById('nadmin-pw').addEventListener('keydown', e => {
     if (e.key === 'Enter') document.getElementById('nadmin-pw-btn').click();
   });
- 
+
   // ── 게시글 등록 ──
   document.getElementById('nadmin-submit-btn').addEventListener('click', async () => {
     const title   = document.getElementById('nadmin-ttl').value.trim();
@@ -1371,16 +1426,16 @@ ${message}`
       alert('오류: ' + e.message);
     }
   });
- 
+
   // ── 모달 닫기 ──
   window.closeAdminModal = function() {
     document.getElementById('nadmin-overlay').style.display = 'none';
     document.getElementById('nadmin-pw').value = '';
   };
- 
+
   // ── 수정 대상 ID 저장용 ──
   let currentEditId = null;
- 
+
   // ── 수정 모달 열기 ──
   function openEditModal(id, title, content, category) {
     currentEditId = id;
@@ -1389,7 +1444,7 @@ ${message}`
     document.getElementById('nedit-cat').value  = category || 'general';
     document.getElementById('nedit-overlay').style.display = 'flex';
   }
- 
+
   // ── 저장 버튼 ──
   document.addEventListener('click', async function(e) {
     if (e.target && e.target.id === 'nedit-save-btn') {
@@ -1424,10 +1479,10 @@ ${message}`
   document.getElementById('nadmin-overlay').addEventListener('click', e => {
     if (e.target === document.getElementById('nadmin-overlay')) closeAdminModal();
   });
- 
+
   // 초기 로드
   loadNotices();
 </script>
- 
+
 </body>
 </html>
