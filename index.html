@@ -496,6 +496,7 @@ footer p{font-size:0.75rem;color:var(--text-dim)}
         <svg class="chevron" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.2"/></svg>
       </button>
       <div class="dropdown">
+        <a href="#prod-beauty"><span class="dropdown-dot" style="background:var(--beauty)"></span>HoloStim Beauty</a>
         <a href="#prod-brain"><span class="dropdown-dot" style="background:var(--blue-light)"></span>HoloStim Brain</a>
         <a href="#prod-cell"><span class="dropdown-dot" style="background:var(--cyan)"></span>HoloStim Cell</a>
         <a href="#prod-acc"><span class="dropdown-dot" style="background:var(--acc)"></span>HoloStim Accessory</a>
@@ -535,7 +536,8 @@ footer p{font-size:0.75rem;color:var(--text-dim)}
     <div class="hero-foot">
       <p class="hero-desc" id="i18n-hero-desc">초음파 홀로그램과 인공지능의 융합으로 뷰티·뇌신경·세포 헬스케어의 새로운 표준을 만듭니다.</p>
       <div class="hero-pills">
-        <span class="hpill p2"><span class="hpill-dot" style="background:var(--blue-light)"></span>HoloStim Brain</span>
+        <span class="hpill p1"><span class="hpill-dot" style="background:var(--beauty)"></span>HoloStim Beauty</span>
+          <span class="hpill p2"><span class="hpill-dot" style="background:var(--blue-light)"></span>HoloStim Brain</span>
         <span class="hpill p3"><span class="hpill-dot" style="background:var(--cyan)"></span>HoloStim Cell</span>
         <span class="hpill p4"><span class="hpill-dot" style="background:var(--acc)"></span>HoloStim Accessory</span>
         
@@ -753,7 +755,7 @@ footer p{font-size:0.75rem;color:var(--text-dim)}
 <section class="sec" id="products">
   <div class="wrap">
     <div class="eyebrow rv" id="i18n-prod-eyebrow">Product Line-up</div>
-    <h2 class="disp rv" id="i18n-prod-h2">3가지 핵심 제품군</h2>
+    <h2 class="disp rv" id="i18n-prod-h2">4가지 핵심 제품군</h2>
 
     <!-- 메인 시스템 이미지 + 설명 2컬럼 -->
     <div class="rv" style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;margin-bottom:3.5rem;background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden">
@@ -773,7 +775,7 @@ footer p{font-size:0.75rem;color:var(--text-dim)}
         </div>
         <h3 style="font-family:'Pretendard Variable',Pretendard,sans-serif;font-size:2rem;font-weight:800;letter-spacing:-0.03em;color:var(--text);margin-bottom:0.5rem;line-height:1.1">HoloStim</h3>
         <p style="font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-muted);margin-bottom:1.5rem">Ultrasound Hologram Platform</p>
-        <p id="i18n-prod-desc" style="font-size:0.9rem;color:var(--text-muted);line-height:1.85;margin-bottom:1.75rem">하나의 초음파 홀로그램 원천 기술 플랫폼 위에서 HoloStim Brain·Cell과 Accessory 세 제품군을 통해 최적화된 헬스케어 솔루션을 제공합니다.</p>
+        <p id="i18n-prod-desc" style="font-size:0.9rem;color:var(--text-muted);line-height:1.85;margin-bottom:1.75rem">하나의 초음파 홀로그램 원천 기술 플랫폼 위에서 HoloStim Beauty·Brain·Cell과 Accessory 네 제품군을 통해 최적화된 헬스케어 솔루션을 제공합니다.</p>
         <!-- 사양 -->
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem">
           <div style="background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:0.75rem 1rem">
@@ -795,7 +797,7 @@ footer p{font-size:0.75rem;color:var(--text-dim)}
         </div>
         <!-- 제품군 태그 -->
         <div style="display:flex;gap:0.5rem;margin-top:1.5rem;flex-wrap:wrap">
-          
+          <span style="font-size:0.72rem;padding:0.3rem 0.8rem;border:1px solid var(--beauty-border);color:var(--beauty);border-radius:4px">Beauty</span>
           <span style="font-size:0.72rem;padding:0.3rem 0.8rem;border:1px solid var(--brain-border);color:var(--blue-light);border-radius:4px">Brain</span>
           <span style="font-size:0.72rem;padding:0.3rem 0.8rem;border:1px solid var(--cell-border);color:var(--cyan);border-radius:4px">Cell</span>
           <span style="font-size:0.72rem;padding:0.3rem 0.8rem;border:1px solid var(--acc-border);color:var(--acc);border-radius:4px">Accessory</span>
@@ -805,9 +807,47 @@ footer p{font-size:0.75rem;color:var(--text-dim)}
 
     <div class="prod-tabs-wrap rv">
       <div class="prod-tabs">
-        <button class="ptab active t-brain" data-pane="prod-brain">01 — HoloStim <span style="opacity:0.55;font-weight:300;font-size:0.85em">Brain</span></button>
-        <button class="ptab t-cell"    data-pane="prod-cell">02 — HoloStim <span style="opacity:0.55;font-weight:300;font-size:0.85em">Cell</span></button>
-        <button class="ptab t-acc"     data-pane="prod-acc">03 — HoloStim Accessory</button>
+        <button class="ptab t-beauty" data-pane="prod-beauty">01 — HoloStim <span style="opacity:0.55;font-weight:300;font-size:0.85em">Beauty</span></button>
+        <button class="ptab active t-brain" data-pane="prod-brain">02 — HoloStim <span style="opacity:0.55;font-weight:300;font-size:0.85em">Brain</span></button>
+        <button class="ptab t-cell"    data-pane="prod-cell">03 — HoloStim <span style="opacity:0.55;font-weight:300;font-size:0.85em">Cell</span></button>
+        <button class="ptab t-acc"     data-pane="prod-acc">04 — HoloStim Accessory</button>
+      </div>
+
+      <!-- BEAUTY -->
+      <div class="pane" id="prod-beauty">
+        <div class="pane-vis" style="background:var(--bg);position:relative">
+          <div style="position:absolute;inset:0;background:radial-gradient(ellipse 80% 70% at 50% 50%,rgba(200,106,255,0.12) 0%,transparent 70%);pointer-events:none;z-index:0"></div>
+          <div class="pane-vis-inner">
+            <svg viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <ellipse cx="150" cy="150" rx="90" ry="70" stroke="#c86aff" stroke-width="1" opacity="0.35"/>
+              <ellipse cx="150" cy="150" rx="60" ry="45" stroke="#c86aff" stroke-width="0.7" opacity="0.25">
+                <animateTransform attributeName="transform" type="rotate" from="0 150 150" to="360 150 150" dur="14s" repeatCount="indefinite"/>
+              </ellipse>
+              <circle cx="150" cy="150" r="28" fill="#c86aff" opacity="0.1"/>
+              <circle cx="150" cy="150" r="10" fill="#c86aff" opacity="0.7"/>
+              <path d="M90 130 Q120 80 150 100 Q180 80 210 130 Q220 160 205 178 Q185 200 150 205 Q115 200 95 178 Q80 160 90 130Z" stroke="#d494ff" stroke-width="0.8" fill="none" opacity="0.4"/>
+              <line x1="150" y1="55" x2="150" y2="90" stroke="#c86aff" stroke-width="0.6" opacity="0.5"/>
+              <line x1="220" y1="85" x2="200" y2="108" stroke="#c86aff" stroke-width="0.6" opacity="0.5"/>
+              <line x1="80"  y1="85" x2="100" y2="108" stroke="#c86aff" stroke-width="0.6" opacity="0.5"/>
+              <text x="150" y="252" text-anchor="middle" fill="#c86aff" font-size="8" font-family="Pretendard Variable, Pretendard, sans-serif" letter-spacing="3" opacity="0.6">BEAUTY CARE</text>
+            </svg>
+          </div>
+        </div>
+        <div class="pane-body">
+          <div class="pane-n">01</div>
+          <h3 class="pane-title" style="color:var(--beauty)">HoloStim</h3>
+          <p class="pane-sub" data-i18n-ko="Beauty — 초음파 홀로그램 피부 미용·재생 솔루션" data-i18n-en="Beauty — Ultrasound Hologram Skin Care &amp; Regeneration Solution">Beauty — 초음파 홀로그램 피부 미용·재생 솔루션</p>
+          <p class="pane-desc" data-i18n-ko="맞춤형 Hologram Lens 및 Transducer 제작을 통한 정밀 초음파 조직 자극으로 피부 조직 개선 물질의 침투 깊이를 획기적으로 향상시킵니다. AI 멀티모달 피부 분석(mSpecFusion-Net)으로 개인 맞춤형 뷰티 헬스케어를 실현합니다." data-i18n-en="Custom Hologram Lens &amp; Transducer enable precise ultrasound tissue stimulation, dramatically enhancing penetration depth of skin-improving substances. AI multimodal skin analysis (mSpecFusion-Net) delivers personalized beauty healthcare.">맞춤형 Hologram Lens 및 Transducer 제작을 통한 정밀 초음파 조직 자극으로 피부 조직 개선 물질의 침투 깊이를 획기적으로 향상시킵니다. AI 멀티모달 피부 분석(mSpecFusion-Net)으로 개인 맞춤형 뷰티 헬스케어를 실현합니다.</p>
+          <ul class="feat-list">
+            <li><span class="fdot" style="background:var(--beauty)"></span><span data-i18n-ko="맞춤형 Hologram Lens · Transducer 제작 — 목적별 탈부착 렌즈로 피부 침투 깊이 정밀 제어" data-i18n-en="Custom Hologram Lens &amp; Transducer — detachable lens for precise skin penetration depth control">맞춤형 Hologram Lens · Transducer 제작 — 목적별 탈부착 렌즈로 피부 침투 깊이 정밀 제어</span></li>
+            <li><span class="fdot" style="background:var(--beauty)"></span><span data-i18n-ko="AI 멀티모달 피부 분석(mSpecFusion-Net) — 분광·형광·3D 영상 융합, F1 Score 91%" data-i18n-en="AI multimodal skin analysis (mSpecFusion-Net) — spectral/fluorescence/3D fusion, F1 Score 91%">AI 멀티모달 피부 분석(mSpecFusion-Net) — 분광·형광·3D 영상 융합, F1 Score 91%</span></li>
+            <li><span class="fdot" style="background:var(--beauty)"></span><span data-i18n-ko="피부과(서울대병원) · MEDIVEL BIO 공동 임상·검증 진행 중" data-i18n-en="Joint clinical validation with Dermatology (Seoul National University Hospital) · MEDIVEL BIO">피부과(서울대병원) · MEDIVEL BIO 공동 임상·검증 진행 중</span></li>
+          </ul>
+          <div class="kpi-row">
+            <div class="kpi-cell"><span class="kpi-v" style="color:var(--beauty)">$8.9B</span><span class="kpi-l" data-i18n-ko="글로벌 피부 미용기기 시장 (2026)" data-i18n-en="Global Skin Beauty Device Market (2026)">글로벌 피부 미용기기 시장 (2026)</span></div>
+            <div class="kpi-cell"><span class="kpi-v" style="color:var(--beauty)">F1 91%</span><span class="kpi-l" data-i18n-ko="AI 멀티모달 피부 영상 분석 정확도 91%" data-i18n-en="AI Multimodal Skin Image Analysis Accuracy 91%">AI 멀티모달 피부 영상 분석 정확도 91%</span></div>
+          </div>
+        </div>
       </div>
 
       <!-- BRAIN -->
@@ -838,7 +878,7 @@ footer p{font-size:0.75rem;color:var(--text-dim)}
           <ul class="feat-list">
             <li><span class="fdot" style="background:var(--blue-light)"></span><span data-i18n-ko="맞춤형 Hologram Lens · Transducer 제작 — 두개골 수차 실시간 보상으로 정밀 뇌 조직 자극 구현" data-i18n-en="Custom Hologram Lens & Transducer — real-time skull aberration compensation for precise neural stimulation">맞춤형 Hologram Lens · Transducer 제작 — 두개골 수차 실시간 보상으로 정밀 뇌 조직 자극 구현</span></li>
             <li><span class="fdot" style="background:var(--blue-light)"></span><span data-i18n-ko="기존 자기 자극 대비 30%+ 향상된 공간 분해능 — 원치 않는 부위 자극 최소화" data-i18n-en="30%+ higher spatial resolution vs TMS — minimized off-target stimulation">기존 자기 자극 대비 30%+ 향상된 공간 분해능 — 원치 않는 부위 자극 최소화</span></li>
-            <li><span class="fdot" style="background:var(--blue-light)"></span><span data-i18n-ko="멀티 초점 홀로그램 자극으로 통증 치료 효과 15% 개선, 회피 역치 90%+ 상승" data-i18n-en="Multi-focus stimulation: 15% pain relief improvement, 90%+ avoidance threshold increase">멀티 초점 홀로그램 자극으로 통증 치료 효과 15% 개선, 회피 역치 90%+ 상승</span></li>
+            <li><span class="fdot" style="background:var(--blue-light)"></span><span data-i18n-ko="멀티 초점 홀로그램 자극으로 통증 치료 효과 지표인 회피 역치 90% 이상 상승" data-i18n-en="Multi-focus stimulation: 15% pain relief improvement, 90%+ avoidance threshold increase">멀티 초점 홀로그램 자극으로 통증 치료 효과 지표인 회피 역치 90% 이상 상승</span></li>
           </ul>
           <div class="kpi-row">
             <div class="kpi-cell"><span class="kpi-v" style="color:var(--blue-light)">$8.73B</span><spanid="i18n-pb-kpi1"  class="kpi-l" data-i18n-ko="글로벌 신경병증성 통증 시장 (2026)" data-i18n-en="Global Neuropathic Pain Market (2026)">글로벌 신경병증성 통증 시장 (2026)</span></div>
@@ -869,7 +909,7 @@ footer p{font-size:0.75rem;color:var(--text-dim)}
           </div>
         </div>
         <div class="pane-body">
-          <div class="pane-n">02</div>
+          <div class="pane-n">03</div>
           <h3 class="pane-title" style="color:var(--cyan)">HoloStim</h3>
           <p id="i18n-pc-sub" class="pane-sub" data-i18n-ko="Cell — 초음파 홀로그램 3D 세포 자극·배양 플랫폼" data-i18n-en="Cell — Ultrasound Hologram 3D Cell Stimulation Platform">Cell — 초음파 홀로그램 3D 세포 자극·배양 플랫폼</p>
           <p class="pane-desc" data-i18n-ko="맞춤형 Hologram Lens 및 Transducer 제작을 통한 정밀 초음파 세포 자극으로 3차원 세포 배양의 새로운 패러다임을 제시합니다." data-i18n-en="Custom Hologram Lens & Transducer redefine 3D cell culture through precise ultra">맞춤형 Hologram Lens 및 Transducer 제작을 통한 정밀 초음파 세포 자극으로 3차원 세포 배양의 새로운 패러다임을 제시합니다. 응집·회전 자극용 맞춤 렌즈가 세포 괴사율을 낮추고, AI 기반 고주파 초음파, 광학 영상 분석으로 3차원 세포의 건강상태를 정량 분석합니다.</p>
@@ -932,6 +972,13 @@ footer p{font-size:0.75rem;color:var(--text-dim)}
     <h2 class="disp rv" id="i18n-app-h2" style="margin-bottom:0.75rem" data-i18n-ko="적용 분야" data-i18n-en="Application Areas">적용 분야</h2>
     <p class="body-lg rv d1" id="i18n-app-desc" style="margin-bottom:3rem">초음파 홀로그램 원천 기술을 바탕으로 뇌신경·세포·비파괴검사 분야에서 혁신적인 솔루션을 제공합니다.</p>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem">
+
+      <div class="app-card">
+        <div class="app-icon" style="border-color:var(--beauty-border)">✦</div>
+        <h3 class="app-title" id="i18n-app-c0-title">피부 미용 · 재생</h3>
+        <p class="app-body" id="i18n-app-c0-body">초음파 홀로그램으로 피부 조직 개선 물질의 침투 깊이를 향상시키는 비침습적 피부 미용·재생 솔루션. AI 멀티모달 분석(mSpecFusion-Net)으로 개인 맞춤형 케어 제공.</p>
+        <div class="app-tag" style="color:var(--beauty)">HoloStim Beauty</div>
+      </div>
 
       <div class="app-card">
         <div class="app-icon" style="border-color:var(--brain-border)">◈</div>
@@ -1195,7 +1242,7 @@ footer p{font-size:0.75rem;color:var(--text-dim)}
             <label class="cf-label" id="i18n-cf-inq">문의 유형 <span>*</span></label>
             <select class="cf-select" name="inquiry_type" required>
               <option value="" disabled selected data-i18n-ko="선택해 주세요" data-i18n-en="Please select">선택해 주세요</option>
-              <option value="product">제품 문의 (HoloStim Brain · Cell)</option>
+              <option value="product">제품 문의 (HoloStim Beauty · Brain · Cell)</option>
               <option value="accessory">액세서리 / 홀로그램 렌즈 문의</option>
               <option value="investment">투자 / 파트너십 문의</option>
               <option value="research">연구 협력 문의</option>
@@ -1209,6 +1256,7 @@ footer p{font-size:0.75rem;color:var(--text-dim)}
             <label class="cf-label" id="i18n-cf-prod">관심 제품</label>
             <select class="cf-select" name="product">
               <option value="" disabled selected>해당 제품을 선택해 주세요 (선택)</option>
+              <option value="beauty">HoloStim Beauty</option>
               <option value="brain">HoloStim Brain</option>
               <option value="cell">HoloStim Cell</option>
               <option value="accessory">HoloStim Accessory</option>
@@ -1254,7 +1302,7 @@ document.querySelectorAll('.ptab').forEach(btn=>{
     const group=btn.closest('.prod-tabs-wrap');
     group.querySelectorAll('.ptab').forEach(b=>{
       b.classList.remove('active');
-      ['t-brain','t-cell','t-acc'].forEach(c=>{ if(b.classList.contains(c)) b.classList.remove(c+'_active'); });
+      ['t-beauty','t-brain','t-cell','t-acc'].forEach(c=>{ if(b.classList.contains(c)) b.classList.remove(c+'_active'); });
     });
     group.querySelectorAll('.pane').forEach(p=>p.classList.remove('active'));
     btn.classList.add('active');
@@ -1609,13 +1657,13 @@ const i18n = {
     // NAV
     nav_home: 'Home', nav_tech: 'Technology', nav_product: 'Product',
     nav_app: 'Applications', nav_about: 'About', nav_notice: 'Notice', nav_contact: 'Contact',
-    nav_p1: 'HoloStim Brain', nav_p2: 'HoloStim Cell', nav_p3: 'HoloStim Accessory',
+    nav_p0: 'HoloStim Beauty', nav_p1: 'HoloStim Brain', nav_p2: 'HoloStim Cell', nav_p3: 'HoloStim Accessory',
 
     // HERO
     hero_badge: 'Ultrasound Holography &amp; AI',
     hero_h1_1: 'Precision', hero_h1_2: 'Healthcare', hero_h1_3: 'through',
     hero_h1_4: 'Ultrasound', hero_h1_5: 'Holography',
-    hero_desc: '세계 최초 AI 기반 실시간 초음파 홀로그램 생성 기술.<br>뇌신경 치료, 3D 세포 배양, 비파괴 검사까지.<br>하나의 플랫폼, 무한한 가능성.',
+    hero_desc: '세계 최초 AI 기반 실시간 초음파 홀로그램 생성 기술.<br>뷰티, 뇌신경 치료, 3D 세포 배양, 비파괴 검사까지.<br>하나의 플랫폼, 무한한 가능성.',
     hero_cta: 'Explore Technology',
 
     // TECHNOLOGY
@@ -1625,14 +1673,16 @@ const i18n = {
 
     // PRODUCTS
     prod_eyebrow: 'Product Line-up',
-    prod_h2: '3가지 핵심 제품군',
-    prod_desc: '하나의 초음파 홀로그램 원천 기술 플랫폼 위에서 HoloStim Brain·Cell과 Accessory 세 제품군을 통해 최적화된 헬스케어 솔루션을 제공합니다.',
+    prod_h2: '4가지 핵심 제품군',
+    prod_desc: '하나의 초음파 홀로그램 원천 기술 플랫폼 위에서 HoloStim Beauty·Brain·Cell과 Accessory 네 제품군을 통해 최적화된 헬스케어 솔루션을 제공합니다.',
     prod_t1: '01 — HoloStim', prod_s1: 'Brain', prod_t2: '02 — HoloStim', prod_s2: 'Cell', prod_t3: '03 — HoloStim Accessory',
 
     // APPLICATIONS
     app_eyebrow: 'Applications',
     app_h2: '적용 분야',
     app_desc: '초음파 홀로그램 원천 기술을 바탕으로 뇌신경·세포·비파괴검사 분야에서 혁신적인 솔루션을 제공합니다.',
+    app_c0_title: '피부 미용 · 재생',
+    app_c0_body: '초음파 홀로그램으로 피부 조직 개선 물질의 침투 깊이를 향상시키는 비침습적 피부 미용·재생 솔루션. AI 멀티모달 분석으로 개인 맞춤형 케어 제공.',
     app_c1_title: '신경병증성 통증 치료',
     app_c1_body: '당뇨·대상포진·외상에 의한 만성 신경 통증의 비침습적 치료. 기존 약물 40~60% 포기율 환자에게 안전하고 효과적인 대안 제공.',
     app_c2_title: '뇌활성화 · 정신건강',
@@ -1682,7 +1732,7 @@ const i18n = {
     // NAV
     nav_home: 'Home', nav_tech: 'Technology', nav_product: 'Product',
     nav_app: 'Applications', nav_about: 'About', nav_notice: 'Notice', nav_contact: 'Contact',
-    nav_p1: 'HoloStim Brain', nav_p2: 'HoloStim Cell', nav_p3: 'HoloStim Accessory',
+    nav_p0: 'HoloStim Beauty', nav_p1: 'HoloStim Brain', nav_p2: 'HoloStim Cell', nav_p3: 'HoloStim Accessory',
 
     // HERO
     hero_badge: 'Ultrasound Holography &amp; AI',
@@ -1698,14 +1748,16 @@ const i18n = {
 
     // PRODUCTS
     prod_eyebrow: 'Product Line-up',
-    prod_h2: '3 Core Product Lines',
-    prod_desc: 'Built on a single ultrasound hologram platform, HoloStim Brain, Cell, and Accessory deliver optimized healthcare solutions across three distinct markets.',
+    prod_h2: '4 Core Product Lines',
+    prod_desc: 'Built on a single ultrasound hologram platform, HoloStim Beauty, Brain, Cell, and Accessory deliver optimized healthcare solutions across four distinct markets.',
     prod_t1: '01 — HoloStim', prod_s1: 'Brain', prod_t2: '02 — HoloStim', prod_s2: 'Cell', prod_t3: '03 — HoloStim Accessory',
 
     // APPLICATIONS
     app_eyebrow: 'Applications',
     app_h2: 'Application Areas',
     app_desc: 'Delivering breakthrough solutions in neuromodulation, cell biology, and non-destructive testing through our core ultrasound hologram technology.',
+    app_c0_title: 'Skin Care & Regeneration',
+    app_c0_body: 'Non-invasive skin care & regeneration solution using ultrasound hologram to enhance penetration of skin-improving substances. Personalized care via AI multimodal analysis.',
     app_c1_title: 'Neuropathic Pain Treatment',
     app_c1_body: 'Non-invasive treatment of chronic neuropathic pain caused by diabetes, shingles, and trauma. A safe, effective alternative for patients with 40–60% drug dropout rates.',
     app_c2_title: 'Brain Activation & Mental Health',
@@ -1790,7 +1842,7 @@ function applyLang(lang) {
   setText($('i18n-app-eyebrow'), t.app_eyebrow);
   setText($('i18n-app-h2'), t.app_h2);
   setText($('i18n-app-desc'), t.app_desc);
-  for(let i=1;i<=6;i++){
+  for(let i=0;i<=6;i++){
     setText($('i18n-app-c'+i+'-title'), t['app_c'+i+'_title']);
     setText($('i18n-app-c'+i+'-body'), t['app_c'+i+'_body']);
   }
@@ -1870,7 +1922,7 @@ function applyLang(lang) {
 
   // ── Contact 폼 select 옵션 ──
   const inqOpts = {
-    product:    [lang === 'ko' ? '제품 문의 (HoloStim Brain · Cell)' : 'Product Inquiry (HoloStim Brain · Cell)'],
+    product:    [lang === 'ko' ? '제품 문의 (HoloStim Beauty · Brain · Cell)' : 'Product Inquiry (HoloStim Beauty · Brain · Cell)'],
     accessory:  [lang === 'ko' ? '액세서리 / 홀로그램 렌즈 문의' : 'Accessory / Hologram Lens Inquiry'],
     investment: [lang === 'ko' ? '투자 / 파트너십 문의' : 'Investment / Partnership'],
     research:   [lang === 'ko' ? '연구 협력 문의' : 'Research Collaboration'],
@@ -1886,6 +1938,8 @@ function applyLang(lang) {
   document.querySelectorAll('#contact-form select[name="product"] option[disabled]').forEach(opt => {
     opt.textContent = lang === 'ko' ? '해당 제품을 선택해 주세요 (선택)' : 'Select a product (optional)';
   });
+  const beautyOpt = document.querySelector('#contact-form select[name="product"] option[value="beauty"]');
+  if (beautyOpt) beautyOpt.textContent = lang === 'ko' ? 'HoloStim Beauty' : 'HoloStim Beauty';
   const allOpt = document.querySelector('#contact-form select[name="product"] option[value="all"]');
   if (allOpt) allOpt.textContent = lang === 'ko' ? '전체 / 미정' : 'All / Undecided';
 
